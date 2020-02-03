@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
 
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>" />
 
   </head>
 <body>
@@ -19,7 +19,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/m.png" alt="logo" height="60px" width="250px"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="<?= base_url('assets/img/m.png')?>" alt="logo" height="60px" width="250px"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,6 @@
         </div>
     </header>
     <!-- Header part end-->
-    
+
 </body>
 </html>
