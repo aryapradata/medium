@@ -7,7 +7,8 @@
 
     <link rel="stylesheet" href="css/header.css">
 
-    <title>Document</title>
+    <title>Medium - Get smarter about what matters to you.</title>
+    <link rel="icon" href="<?= base_url('assets/img/logo.png')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>" />
 
     <header class="main_menu home_menu">
@@ -39,6 +40,7 @@
                                         <a class="nav-link active" data-toggle="modal" data-target="#exampleModal"> Sign In </a>
                                         </li>
                                     </ul>
+
                                     <li class="nav-item active">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">
                                         Get Started
@@ -53,3 +55,5 @@
                 </div>
             </div>
     </header>
+
+    
