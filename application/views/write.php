@@ -48,17 +48,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <img src="<?= base_url('assets/img/comment/comment_1.png')?>" height="65px" width="65px" >
+                    <a href=""> <img src="<?= base_url('assets/img/comment/comment_1.png')?>" height="65px" width="65px"> </a>
                         <br><br>
-                        <h5>Baratunde Thurston</h5>
+                        <h5>Baratunde Thurstonh</h5>
                         <p>I love that Medium is trying to support art and writing without shoveling its users into
                            the gaping maw that is the soul-crushing advertising machine.</p>
                     </div>
                     <div class="col">
-                    2 of 2
+                    <a href=""> <img src="<?= base_url('assets/img/comment/comment_2.png')?>" height="65px" width="65px"> </a>
+                        <br><br>
+                        <a href=""><h5>Edith Zimmerman</h5></a>
+                        <p>Medium opens doors. I started out writing online with the sense that I was dropping
+                           sentences into the void. Medium showed me that people are listening, and that they care
+                           about what I have to say.</p>
                     </div>
                     <div class="col">
-                    2 of 2
+                        <a href=""> <img src="<?= base_url('assets/img/comment/comment_3.png')?>" height="65px" width="65px"> </a>
+                        <br><br>
+                        <a href=""><h5>John DeVore</h5></a>
+                        <p>As a professional writer I am a hired gun: I don’t always get to pick my paycheck. But
+                            Medium is a place where I can be untethered from fashion and write what I want and 
+                            hope others will read it.</p>
                     </div>
                 </div>
             </div>
