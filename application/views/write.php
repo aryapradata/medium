@@ -40,6 +40,32 @@
                 Join the Medium Partner Program</button>  
         </div>
     </div>
+    <div class="brand u-background">
+        <div class="brand-header">
+            <h3>Why people love writing on Medium</h3>
+        </div>
+        <div class="avatar-image">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="<?= base_url('assets/img/comment/comment_1.png')?>" height="65px" width="65px" >
+                        <br><br>
+                        <h5>Baratunde Thurston</h5>
+                        <p>I love that Medium is trying to support art and writing without shoveling its users into
+                           the gaping maw that is the soul-crushing advertising machine.</p>
+                    </div>
+                    <div class="col">
+                    2 of 2
+                    </div>
+                    <div class="col">
+                    2 of 2
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
 
 
 
