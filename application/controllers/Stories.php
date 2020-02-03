@@ -8,7 +8,14 @@ class Stories extends CI_Controller {
 		$this->load->model('Stories_model');
 		$this->load->library('form_validation');
 	}
+
 	public function index()
+	{
+		$data['stories'] = $this->Stories_model->getAllStories();
+		$this->load->view('homepage',$data);
+	}
+
+	public function create_form()
 	{
 		$this->load->view('create_stories');
 	}
@@ -77,8 +84,15 @@ class Stories extends CI_Controller {
 		$this->load->view('update_stories',$data);
 	}
 
-	public function publish($title,$id)
+	public function open_stories($title,$id)
 	{
+		$data['stories'] = $this->Stories_model->getStoryByTitleId($title,$id);
+		$this->load->view('open_stories',$data);
+	}
 
+	public function delete($id)
+	{
+		$this->Stories_model->deleteStories($id);
+		redirect('stories/homepage');
 	}
 }

@@ -18,6 +18,8 @@
                 <td><a href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a></td>
                 <td><?= $val['content']; ?></td>
                 <td><?= $val['media']; ?></td>
+                <td><a href="<?= base_url(); ?>stories/open_stories/<?= $val['title']; ?>/<?=$val['content_id']?>">Publish</a></td>
+                <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

@@ -12,6 +12,13 @@ class Stories_model extends CI_Model{
         return $this->db->get('content')->result_array();
     }
 
+    public function getStoryByTitleId($title,$id)
+    {
+        $this->db->where('title',$title);
+        $this->db->where('content_id',$id);
+        return $this->db->get('content')->result_array();
+    }
+
     public function createStories()
     {
         $data = [
@@ -104,5 +111,9 @@ class Stories_model extends CI_Model{
         $this->db->update('content',$data);
     }
 
-    
+    public function deleteStories($id)
+    {
+        $this->db->where('content_id',$id);
+        $this->db->delete('content');
+    }
 }
