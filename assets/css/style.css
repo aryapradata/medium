@@ -145,5 +145,11 @@ a:hover{
     font-size: 25px;
 
 }
+.footerbox pre{
+    color: rgb(206, 194, 194);
+}
+.footerbox hr{
+    color: rgb(206, 194, 194);
+}
 
 
