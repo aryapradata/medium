@@ -42,12 +42,6 @@
                                <p> <img src="img/hashtag.png" class="mypic"> Future</p>
                             </div>
 
-                            <!-- <form action="post">
-                                <div class="mybox">
-                                    <input type="radio" name="future" src="img/hashtag.png" class="mypic" ><p>future </p>
-                                </div>
-                            </form> -->
-
                             <br>
                             <h4> Select what you're into. We'll help you find great things to read. </h4>
                             <br>
@@ -64,10 +58,6 @@
             </div>
         </div>
         
-        <div class="hero-app-1 custom-animation"><img src="img/animate_icon/icon_1.png" alt=""></div>
-        <div class="hero-app-5 custom-animation2"><img src="img/animate_icon/icon_3.png" alt=""></div>
-        <div class="hero-app-7 custom-animation3"><img src="img/animate_icon/icon_2.png" alt=""></div>
-        <div class="hero-app-8 custom-animation"><img src="img/animate_icon/icon_4.png" alt=""></div>
     </section>
     <!-- banner part start-->
 
