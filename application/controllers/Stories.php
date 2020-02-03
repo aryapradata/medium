@@ -15,33 +15,70 @@ class Stories extends CI_Controller {
 
 	public function create()
 	{
-		$this->form_validation->set_rules('title','Title','required');
-		$this->form_validation->set_rules('content','Content','required');
-		$this->form_validation->set_rules('media','Media','required');
+		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+		{
+			$this->Stories_model->createStoriesTitleNull();
+			redirect('stories/view_all');
+		}
+
+		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+		{
+			$this->Stories_model->createStoriesContentNull();
+			redirect('stories/view_all');
+		}
+
+		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
+		{
+			$this->Stories_model->createStoriesMediaNull();
+			redirect('stories/view_all');
+		}
 		
-        if($this->form_validation->run() == FALSE) {
-			$this->Stories_model->createStoriesNull();
-			echo "berhasil ditambahkan (null)";
-        }
         else {
 			$this->Stories_model->createStories();
-			echo "berhasil ditambahkan";
+			redirect('stories/view_all');
         }
 	}
 
 	public function update($id)
 	{
-		$this->form_validation->set_rules('title','Title','required');
-		$this->form_validation->set_rules('content','Content','required');
-		$this->form_validation->set_rules('media','Media','required');
+		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+		{
+			$this->Stories_model->updateStoriesTitleNull($id);
+			redirect('stories/view_all');
+		}
+
+		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+		{
+			$this->Stories_model->updateStoriesContentNull($id);
+			redirect('stories/view_all');
+		}
+
+		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
+		{
+			$this->Stories_model->updateStoriesMediaNull($id);
+			redirect('stories/view_all');
+		}
 		
-        if($this->form_validation->run() == FALSE) {
-			$this->Stories_model->updateStoriesNull($id);
-			echo "berhasil ditambahkan (null)";
-        }
         else {
 			$this->Stories_model->updateStories($id);
-			echo "berhasil ditambahkan";
+			redirect('stories/view_all');
         }
+	}
+
+	public function view_all()
+	{
+		$data['stories'] = $this->Stories_model->getAllStories();
+		$this->load->view('draft_stories',$data);
+	}
+
+	public function update_form($id)
+	{
+		$data['stories'] = $this->Stories_model->getStoryById($id);
+		$this->load->view('update_stories',$data);
+	}
+
+	public function publish($title,$id)
+	{
+
 	}
 }
