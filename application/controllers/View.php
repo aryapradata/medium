@@ -4,7 +4,7 @@ class View extends CI_Controller {
 
     public function index ()
     {
-        $this->load->view('write');
+        $this->load->view('login');
     }
 
 }
