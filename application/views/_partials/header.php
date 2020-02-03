@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/header.css">
 
     <title>Medium - Get smarter about what matters to you.</title>
@@ -36,10 +38,10 @@
                                     
                                     </li>
                                     <ul class="nav justify-content-end">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="modal" data-target="#exampleModal"> Sign In </a>
-                                        </li>
-                                    </ul>
+                                    <li class="nav-item">
+                                      <a class="nav-link active" data-toggle="modal" data-target="#exampleModal"> Sign In </a>
+                                    </li>
+                                     </ul>
 
                                     <li class="nav-item active">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal1">
@@ -54,6 +56,9 @@
                     </div>
                 </div>
             </div>
+
+
+            
     </header>
 
     

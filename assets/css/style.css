@@ -2,7 +2,7 @@ body{
     text-align: center;
 }
 
-h1{
+h7{
     font-weight: bolder;
     font-size: 100px;
     font-family: fantasy;
@@ -145,5 +145,18 @@ a:hover{
     font-size: 25px;
 
 }
+
+.modallbg{
+    background-image: url("../img/kupu.png");
+    background-repeat: no-repeat;
+    
+  }
+  
+  .modallbg2{
+    background-image: url("../img/kupu2.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    
+  }
 
 
