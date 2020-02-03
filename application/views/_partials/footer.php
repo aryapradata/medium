@@ -56,6 +56,8 @@
             </div>
         </div>
     </div>
+    <hr>
+    <pre>© 2019, A Medium Corporation</pre>
 </div>
 
 <hr>

@@ -32,7 +32,7 @@
                                         <a class="nav-link" href="index.html">Subscribe</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Write</a>
+                                        <a class="nav-link" href="write.php">Write</a>
                                     </li>
                                     <li class="nav-item active">
                                     
