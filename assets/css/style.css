@@ -151,5 +151,23 @@ a:hover{
 .footerbox hr{
     color: rgb(206, 194, 194);
 }
+.brand-header h3{
+    font-family: medium-marketing-display-font,Georgia,Cambria,"Times New Roman",Times,serif !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    padding-top: 60px !important;
+}
+.u-banner{
+    max-width: 1000px !important;
+    position: relative !important;
+    padding-bottom: 60px !important;
+    padding-top: 60px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: #E8F3EC;
+}
 
 
