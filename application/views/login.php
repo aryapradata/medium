@@ -7,12 +7,15 @@
       <!-- card -->
         <div class="card">
         <div class="card-header">
-            Featured
+            <img src="<?= base_url('assets/img/login.png')?>" height="100%" width="100%" > 
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="boxberita">
+            <div class="berita">
+                <h5 class="card-title"><a href="" >Five Things You Don’t Want To Regret When You’re My Age</a></h5>
+                <p class="card-text"><a href="" >Nama Penulis</a></p>
+            </div>
+            </div>
         </div>
         </div>
         <!-- end card -->
@@ -20,16 +23,22 @@
     <div class="col-sm">
       
         <!-- card -->
-        <div class="row">
-        <div class="col-sm-12">
-            <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                <img src="<?= base_url('assets/img/login.png')?>" height="100%" width="100%" >
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <div class="boxberita1">
+                    <div class="berita">
+                        <h5 class="card-title"><a href="" >Five Things You Don’t Want To Regret When You’re My Age</a></h5>
+                        <p class="card-text"><a href="" >Nama Penulis</a></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
         <!-- end card -->
 
@@ -39,12 +48,15 @@
        <!-- card -->
        <div class="card">
         <div class="card-header">
-            Featured
+            <img src="<?= base_url('assets/img/login.png')?>" height="100%" width="100%" >
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="boxberita">
+            <div class="berita">
+                <h5 class="card-title"><a href="" >Five Things You Don’t Want To Regret When You’re My Age</a></h5>
+                <p class="card-text"><a href="" >Nama Penulis</a></p>
+            </div>
+            </div>
         </div>
         </div>
         <!-- end card -->

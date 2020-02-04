@@ -210,8 +210,39 @@ a:hover{
   }
 
   .navbarsearch{
-      margin-left: 700px;
+      margin-left: 500px;
   }
 
+  .berita a{
+      color: black;
+      float: left;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 5px;
+      font-weight: bold;
+      font-family: monospace;
+      font-size: 15px;
+  }
 
+ .berita a:hover{
+      color: grey;
+  }
+
+  .boxberita{
+
+    width: 300px;  
+    height: 100px;
+    background :pink;
+    margin : 0 auto;
+
+}
+
+.boxberita1{
+
+    width: 200px;  
+    height: 200%;
+    background :grey;
+    margin : 0 auto;
+
+}
 
