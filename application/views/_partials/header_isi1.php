@@ -29,20 +29,23 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
+                                        <form class="form-inline my-2 my-lg-0">
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item active">
                                         <a class="nav-link" href="index.html">Subscribe</a>
                                     </li>
                                     <li class="nav-item active">
                                         <a class="nav-link" href="write.php">Write</a>
-                                    </li>
-                                    <li class="nav-item active">
-                                    
                                     </li>
                                     <ul class="nav justify-content-end">
                                     <li class="nav-item">
                                       <a class="nav-link active" data-toggle="modal" data-target="#exampleModal"> Sign In </a>
                                     </li>
                                      </ul>
-                                    
+        
                                 </ul>
                             </div>
                         </nav>
