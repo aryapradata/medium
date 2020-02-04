@@ -20,7 +20,7 @@ class Stories extends CI_Controller {
 
 	public function create_form()
 	{
-		$this->load->view('create_stories');
+		$this->load->view('stories/create_stories');
 	}
 
 	public function create()
@@ -78,19 +78,19 @@ class Stories extends CI_Controller {
 	public function drafts()
 	{
 		$data['stories'] = $this->Stories_model->getStoryByUsername();
-		$this->load->view('draft_stories',$data);
+		$this->load->view('stories/draft_stories',$data);
 	}
 
 	public function update_form($id)
 	{
 		$data['stories'] = $this->Stories_model->getStoryById($id);
-		$this->load->view('update_stories',$data);
+		$this->load->view('stories/update_stories',$data);
 	}
 
 	public function open_stories($id)
 	{
 		$data['stories'] = $this->Stories_model->getStoryById($id);
-		$this->load->view('open_stories',$data);
+		$this->load->view('stories/open_stories',$data);
 	}
 
 	public function delete($id)

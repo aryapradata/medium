@@ -41,8 +41,9 @@
                 } ?></td>
         </tr>
     </table>
-    <button type="button"><a href="<?= base_url("user/get_data/" . $user['user_id']); ?>">Edit Profile</a>
-        <button type="button"><a href="<?= base_url('auth/logout'); ?>">LOGOUT</a>
+    <button type="button"><a href="<?= base_url("user/get_data/" . $user['user_id']); ?>">Edit Profile</a></button>
+        <button type="button"><a href="<?= base_url('auth/logout'); ?>">LOGOUT</a></button>
+        <a href="<?= base_url(); ?>stories/index">Back</a>
 
 </body>
 

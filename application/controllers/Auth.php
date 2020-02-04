@@ -39,11 +39,13 @@ class Auth extends CI_Controller
 
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'username' => $user['username'],
                         'email' => $user['email'],
-                        'role_id' => $user['role_id']
+                        'role_id' => $user['role_id'],
+                        'status' => 'login'
                     ];
                     $this->session->set_userdata($data);
-                    redirect('user');
+                    redirect('stories');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   Password Invalid</div>');
@@ -66,7 +68,7 @@ class Auth extends CI_Controller
     {
 
         if ($this->session->userdata('email')) {
-            redirect('user');
+            redirect('stories');
         }
         $this->form_validation->set_rules('first_name', 'First_Name', 'required|trim');
         $this->form_validation->set_rules('last_name', 'Last_Name', 'trim');

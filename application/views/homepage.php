@@ -20,6 +20,7 @@
         <br>
         <a href="<?= base_url(); ?>stories/drafts">Drafts</a>
     </table>  
+    <a href="<?= base_url(); ?>user">See Profile</a>
     <a href="<?= base_url(); ?>auth/logout">Logout</a>
 </body>
 </body>
