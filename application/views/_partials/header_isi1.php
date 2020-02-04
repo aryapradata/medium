@@ -42,7 +42,6 @@
                                       <a class="nav-link active" data-toggle="modal" data-target="#exampleModal"> Sign In </a>
                                     </li>
                                      </ul>
-                                
                                     
                                 </ul>
                             </div>
