@@ -8,10 +8,10 @@
 </head>
 <body>
     <?php foreach ($stories as $val) : ?>
-        <h3><?= $val['title'] ?></h3>
-        <p><?= $val['content'] ?></p>
-        <a href="<?= base_url(); ?>stories/update/<?= $val['content_id']?>">Edit Content</a>
-        <a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
+        <h3><?= $val['title']; ?></h3>
+        <p><?= $val['content']; ?></p>
+        <br>
+        <p><?= $val['first_name']; ?> <?= $val['last_name']; ?></p>
     <?php endforeach; ?>
     <a href="<?= base_url(); ?>stories/index">Back</a>
 </body>

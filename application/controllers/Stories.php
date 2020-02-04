@@ -7,11 +7,14 @@ class Stories extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Stories_model');
 		$this->load->library('form_validation');
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("auth"));
+		} 
 	}
 
 	public function index()
 	{
-		$data['stories'] = $this->Stories_model->getAllStories();
+		$data['stories'] = $this->Stories_model->getStoriesByStatus();
 		$this->load->view('homepage',$data);
 	}
 
@@ -25,24 +28,24 @@ class Stories extends CI_Controller {
 		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
 		{
 			$this->Stories_model->createStoriesTitleNull();
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 
 		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
 		{
 			$this->Stories_model->createStoriesContentNull();
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 
 		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
 		{
 			$this->Stories_model->createStoriesMediaNull();
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 		
         else {
 			$this->Stories_model->createStories();
-			redirect('stories/view_all');
+			redirect('stories/drafts');
         }
 	}
 
@@ -51,30 +54,30 @@ class Stories extends CI_Controller {
 		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
 		{
 			$this->Stories_model->updateStoriesTitleNull($id);
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 
 		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
 		{
 			$this->Stories_model->updateStoriesContentNull($id);
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 
 		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
 		{
 			$this->Stories_model->updateStoriesMediaNull($id);
-			redirect('stories/view_all');
+			redirect('stories/drafts');
 		}
 		
         else {
 			$this->Stories_model->updateStories($id);
-			redirect('stories/view_all');
+			redirect('stories/drafts');
         }
 	}
 
-	public function view_all()
+	public function drafts()
 	{
-		$data['stories'] = $this->Stories_model->getAllStories();
+		$data['stories'] = $this->Stories_model->getStoryByUsername();
 		$this->load->view('draft_stories',$data);
 	}
 
@@ -84,15 +87,22 @@ class Stories extends CI_Controller {
 		$this->load->view('update_stories',$data);
 	}
 
-	public function open_stories($title,$id)
+	public function open_stories($id)
 	{
-		$data['stories'] = $this->Stories_model->getStoryByTitleId($title,$id);
+		$data['stories'] = $this->Stories_model->getStoryById($id);
 		$this->load->view('open_stories',$data);
 	}
 
 	public function delete($id)
 	{
 		$this->Stories_model->deleteStories($id);
-		redirect('stories/homepage');
+		redirect('stories');
 	}
+
+	public function publish($id)
+	{
+		$this->Stories_model->publish($id);
+		redirect('stories/open_stories/' . $id);
+	}
+
 }
