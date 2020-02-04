@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2020 at 08:59 AM
+-- Generation Time: Feb 04, 2020 at 02:53 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -30,17 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `content` (
   `content_id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `title` text NOT NULL,
   `content` text NOT NULL,
-  `media` text DEFAULT NULL
+  `media` text DEFAULT NULL,
+  `status_stories` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `content`
 --
 
-INSERT INTO `content` (`content_id`, `title`, `content`, `media`) VALUES
-(1, 'how to be a dumb bitch', 'be dumb', NULL);
+INSERT INTO `content` (`content_id`, `username`, `title`, `content`, `media`, `status_stories`) VALUES
+(1, '', 'how to be a dumb bitch', 'be dumb', NULL, 0),
+(2, 'dhiyadice', 'tes', 'tes123', 'No Media', 1);
 
 -- --------------------------------------------------------
 
@@ -68,7 +71,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`first_name`, `last_name`, `email`, `password`, `username`, `bio`, `media`, `role_id`, `is_active`, `date_created`, `user_id`) VALUES
 ('dhiya dc', 'callistaaaa', 'zoe@gmail.com', '$2y$10$b0xnIpMp5DGD8N4fJqs4dOU6aQ09BgYPuCS0fvjQYHvF/bGS2E5AG', 'dhiyyaaaa', 'lah anjay bgt', '', 2, 1, 1580744842, 7),
-('arya', 'pradata', 'arya@gmail.com', '$2y$10$WbJyv9vKSHD6klFfBOQUduFJRUN6qWVB/tyRMVd7p8rYLOyORd5OW', 'aryap12345', '', '', 2, 1, 1580801583, 8);
+('arya', 'pradata', 'arya@gmail.com', '$2y$10$WbJyv9vKSHD6klFfBOQUduFJRUN6qWVB/tyRMVd7p8rYLOyORd5OW', 'aryap12345', '', '', 2, 1, 1580801583, 8),
+('Dhiya', 'Calista', 'dhiya@gmail.com', '$2y$10$hioszgMChAI0G4UngnLS5.1ZdtB8I6m8VNyl6FEd2XAfm8ppqqZ5S', 'dhiyadice', 'Hey there! I\'m Dhiya! Welcome to my Medium', '', 2, 1, 1580822749, 9);
 
 -- --------------------------------------------------------
 
@@ -119,13 +123,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `content`
 --
 ALTER TABLE `content`
-  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user_role`
