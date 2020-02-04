@@ -12,8 +12,6 @@
             <tr>
                 <td>First Name</td>
                 <td><input type="text" name="first_name" id="first_name" placeholder="First Name" value="<?= set_value('first_name'); ?>"></td>
-            <tr>
-                <td></td>
                 <td><?= form_error('first_name', '<small class="text-danger">', '</small>') ?></td>
             </tr>
             </tr>
