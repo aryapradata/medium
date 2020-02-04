@@ -139,10 +139,10 @@ a:hover{
     color: grey;
     background : white;
     margin : 0 auto;
-    font-family: initial;
+    font-family: medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;
     margin-top: 40px;
     margin-bottom: 40px;
-    font-size: 25px;
+    font-size: 20px;
 
 }
 .footerbox pre{

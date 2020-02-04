@@ -282,6 +282,7 @@
     <div class= "expand">
 
           <h7>Expand your reading.</h7>
+          <br>
           <h7>Expand your mind.</h7>
 
     </div>
