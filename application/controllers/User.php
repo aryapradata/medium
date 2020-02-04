@@ -52,4 +52,13 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['user_id' => $id])->row_array();
         redirect('user', $data);
     }
+
+    public function get_user($username)
+    {
+        if (!$this->session->userdata('email')) {
+            redirect('user');
+        }
+        $data['user'] = $this->db->get_where('user', ['username' => $username])->row_array();
+        $this->load->view('user/peek_profile', $data);
+    }
 }
