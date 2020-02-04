@@ -9,6 +9,9 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
             'valid_email' => "Invalid email address!"
         ]);
@@ -61,6 +64,10 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+
+        if ($this->session->userdata('email')) {
+            redirect('user');
+        }
         $this->form_validation->set_rules('first_name', 'First_Name', 'required|trim');
         $this->form_validation->set_rules('last_name', 'Last_Name', 'trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -81,6 +88,7 @@ class Auth extends CI_Controller
                 'email' => htmlspecialchars($this->input->post('email')),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'username' => htmlspecialchars($this->input->post('username')),
+                'bio' => "Hey there! I'm " . $this->input->post('first_name') . "! Welcome to my Medium",
                 'role_id' => 2,
                 'is_active' => 1,
                 'date_created' => time()
