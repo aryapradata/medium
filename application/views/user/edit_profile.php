@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td>username</td>
-                <td><?= $user['username'] ?><input type="hidden" name="username" id="username" placeholder="username"></td>
+                <td><input type="text" name="username" id="username" placeholder="username" value="<?= $user['username'] ?>"></td>
                 <td><small class="text-danger"><?= form_error('username') ?></small></td>
             </tr>
             <tr>

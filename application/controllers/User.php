@@ -40,6 +40,13 @@ class User extends CI_Controller
         $last_name = $this->input->post('last_name');
         $username = $this->input->post('username');
         $bio = $this->input->post('bio');
+        $utemp = $this->db->get_where('user', ['user_id' => $id])->row_array();
+        $qtemp = array('username' => $username);
+        for ($i = 0; $i < count($utemp); $i++) {
+            $datatemp = $this->db->get_where('content', ['username' => $utemp['username']]);
+            $this->db->where('username', $utemp['username']);
+            $this->db->update('content', $qtemp);
+        };
         $temp = array(
             'first_name' => $first_name,
             'last_name' => $last_name,
