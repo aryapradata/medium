@@ -60,7 +60,7 @@ class User extends CI_Controller
         }
         $data['user'] = $this->db->get_where('user', ['username' => $username])->row_array();
         if ($data['email'] == $this->session->userdata('email')) {
-            redirect('user', $data);
+            $this->load->view('user/user_profile', $data);
         } else {
             $this->load->view('user/peek_profile', $data);
         }
