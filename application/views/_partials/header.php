@@ -34,7 +34,7 @@
                                         <a class="nav-link" href="index.html">Subscribe</a>
                                     </li>
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="write.php">Write</a>
+                                    <a class="nav-link" href="<?php echo base_url('View/write'); ?>">Write</a>
                                     </li>
                                     <li class="nav-item active">
         

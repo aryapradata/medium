@@ -21,7 +21,7 @@
                               <a class="nav-link active" href="#">About Medium</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Write</a>
+                                <a href="<?php echo base_url('View/write'); ?>">WRITE</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="#">Gift</a>
