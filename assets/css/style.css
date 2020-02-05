@@ -318,7 +318,6 @@ h4{
     color: white;
     background:grey;
     margin : 0 auto;
-<<<<<<< HEAD
    
 
 }
@@ -340,10 +339,8 @@ h4{
 .content h4{
     color: rgba(0, 0, 0, 0.54);
     font-weight: bold;
-=======
     margin-top: 50px;
   
->>>>>>> 6e75204a3a7e4032d0b9b46a2bf471b39d0841d9
 }
 
 .homepagebox{
