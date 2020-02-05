@@ -51,6 +51,7 @@ h4{
     color: white;
     background:black;
     margin : 0 auto;
+   
   
 }
 
@@ -146,7 +147,8 @@ a:hover{
 
 }
 .footerbox pre{
-    color: rgb(206, 194, 194);
+    color: black;
+    
 }
 .footerbox hr{
     color: rgb(206, 194, 194);
@@ -205,6 +207,24 @@ a:hover{
     
   }
 
+  .modallbg4{
+    background-image: url("../img/abstrak.png");
+    background-size: 400px;
+    background-repeat: no-repeat;
+  
+  }
+
+  .modallbg3{
+    background-image: url("../img/abstrak2.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 400px;
+
+  }
+
+
+
   .navbarlogin{
     margin-top: 32px;
   }
@@ -228,51 +248,50 @@ a:hover{
       color: grey;
   }
 
- /* Tooltip container */
-.tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-  
-  /* Tooltip text */
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-  
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-  
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  /* Tooltip arrow */
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
+  .boxlogin{
+
+    width: 600px;  
+    height: 100%;
+    color: black;
+    background : white;
+    margin : 0 auto;
+    font-family: initial;
+    margin-top: 40px;
+    margin-bottom: 40px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: black;
+
+  }
+
+  .boxlogin a{
+      color: #006666;
+  }
+
+  .boxlogin pre{
+      font-family: cursive;
+  }
+
+  .boxlogin hr{
+      background-color: grey;
+  }
+
+  .boxlogin h1{
+      color: grey;
+      font-variant: small-caps;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: bolder;
   }
   
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
+  .boxlogin td{
+      font-family: monospace;
+      font-weight: 800;
   }
+  
+ .getstarted a{
+     color: #6633CC;
+     font-weight: 900;
+     font-size: 25PX;
+ }
+
 
 

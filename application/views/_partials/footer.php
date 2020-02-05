@@ -12,13 +12,11 @@
                 <td>
                     <div class="link">
                         <ul class="nav justify-content-center">
-                            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal1">
-                                Get Started
-                            </button>  
+                                <a href="<?php echo base_url('Auth/registration'); ?>">GET STARTED</a>  
                             <li class="nav-item">
                               <a class="nav-link" href="#">Subscribe</a>
                             </li>
-                            <p>Have an account?</p><a href="#exampleModal" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">Sign in</a> 
+                                <a href="<?php echo base_url('Auth'); ?>">SIGN IN</a> 
                             <li class="nav-item">
                               <a class="nav-link active" href="#">About Medium</a>
                             </li>
@@ -56,8 +54,7 @@
             </div>
         </div>
     </div>
-    <hr>
-    <pre>© 2019, A Medium Corporation</pre>
+   
 </div>
 
 <hr>

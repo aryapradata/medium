@@ -1,12 +1,4 @@
-
-    
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
-
     <?php $this->load->view("_partials/header.php"); ?>
-
-  </head>
-<body>
 
   <center>
 
@@ -182,14 +174,14 @@
                             <br>
                             <h4> Select what you're into. We'll help you find great things to read. </h4>
                             <br>
-                            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal1">
-                            GET STARTED
-                            </button>  
+                          <div class="getstarted">
+                            <a href="<?php echo base_url('Auth/registration'); ?>">GET STARTED</a>  
                             <br>
                             <br>
-                            <h3>Already have an account?</h3> <a href="#exampleModal" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">Sign in</a> 
+                            <h3>Already have an account?</h3> <a href="<?php echo base_url('Auth'); ?>">Sign in</a> 
                             <br>
                             <br>
+                          </div>
 
     <!-- banner part end-->
 
@@ -286,136 +278,13 @@
           <h7>Expand your mind.</h7>
 
     </div>
-
-    <br>
-
-    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal1">
-    GET STARTED
-    </button>
-
+    
     <br>
     <br>
-
-
-  <!-- Modal Sign In -->
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header" >
-                    
-                      <div text-align="center" >
-                      <h1 class="modal-title" id="exampleModalLabel" >Welcome Back</h1>
-                      </div>
-                  
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modallbg">
-                  <center>
-                  <div text-align="center" >
-                  <br>
-                  Sign in to get personalized story recommendations,
-                  <br>
-                  follow authors and topics you love, and interact with 
-                  <br>
-                  stories.
-                  
-                  </div>
-                
-                  <div class="modal-body">
-                      <table border ="0">
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary btn-lg btn-block" ><img src="<?= base_url('assets/img/rsz_1g.jpg')?>" align="left"><h5>Sign in with Google</h5></button></td>
-                      </tr>
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary"><img src="<?= base_url('assets/img/rsz_f.png')?>" align="left"><h5>Sign in with Facebook</h5></button></td>
-                      </tr>
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary"><img src="<?= base_url('assets/img/rsz_11t.png')?>" align="left"><h5>Sign in with Twitter</h5></button></td>
-                      </tr>
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary"><img src="<?= base_url('assets/img/rsz_g.png')?>" align="left"><h5>Sign in with Gmail</h5></button></td>
-                      </tr>
-                      </table>
-                  </div>
-                  <br>
-                  <div>
-                      <pre>
-                  To make Medium work, we log user data and share it 
-              with service providers. Click “Sign In” above to accept
-                  Medium’s <a href="termofservice.html">Terms of Service </a> & <a href="privacypolicy.html">Privacy Policy.</a>
-                      </pre>
-                  </div>
-                  </center>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-  <!-- end modal sign in -->
-
-
-     <!-- Modal Get Started  -->
-            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                  <div class="modal-header" >
-                    
-                      <div text-align="center" >
-                      <h1 class="modal-title" id="exampleModalLabel" >Join Medium.</h1>
-                      </div>
-                  
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class = "modallbg2">
-                  <center>
-                  <div text-align="center" >
-                  <br>
-                  Create an account to receive great stories in your inbox,
-                  <br>
-                  personalize your homepage, and follow authors and
-                  <br>
-                  topics that you love.
-                  
-                  </div>
-                
-                  <div class="modal-body">
-                      <table border ="0">
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary btn-lg btn-block" ><img src="<?= base_url('assets/img/rsz_1g.jpg')?>" align="left"><h5>Sign in with Google</h5></button></td>
-                      </tr>
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-outline-secondary"><img src="<?= base_url('assets/img/rsz_f.png')?>" align="left"><h5>Sign in with Facebook</h5></button></td>
-                      </tr>
-                      <tr>
-                      <td align="center"><button type="button" class="btn btn-secondary" ><h5>Sign in with Email</h5></button></td>
-                      </tr>
-                      </table>
-                  </div>
-                  <h4>Already have an account?</h4> 
-                  <a href="#exampleModal" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">Sign in</a> 
-                  <div>
-                      <br>
-                      <pre>
-                  To make Medium work, we log user data and share it 
-              with service providers. Click “Sign In” above to accept
-                  Medium’s <a href="termofservice.html">Terms of Service </a> & <a href="privacypolicy.html">Privacy Policy.</a>
-                      </pre>
-                  </div>
-                  </center>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-  <!-- end modal get started -->
 
   </center>
-    <?php $this->load->view("_partials/footer.php"); ?>
+
+<?php $this->load->view("_partials/footer.php"); ?>
 
 
 
