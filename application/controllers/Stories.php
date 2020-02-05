@@ -77,7 +77,7 @@ class Stories extends CI_Controller {
 
 	public function drafts()
 	{
-		$data['stories'] = $this->Stories_model->getStoryByUsername();
+		$data['stories'] = $this->Stories_model->getStoriesByUsernameStatus0();
 		$this->load->view('stories/draft_stories',$data);
 	}
 
@@ -103,6 +103,17 @@ class Stories extends CI_Controller {
 	{
 		$this->Stories_model->publish($id);
 		redirect('stories/open_stories/' . $id);
+	}
+
+	public function published()
+	{
+		$data['published'] = $this->Stories_model->getStoriesByUsernameStatus1();
+		$this->load->view('stories/published_stories', $data);
+	}
+
+	public function your_stories()
+	{
+		$this->load->view('stories/your_stories');
 	}
 
 }

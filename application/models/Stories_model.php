@@ -16,9 +16,17 @@ class Stories_model extends CI_Model{
         return $this->db->get()->result_array();
     }
 
-    public function getStoryByUsername()
+    public function getStoriesByUsernameStatus0()
     {
         $this->db->where('username',$this->session->userdata('username'));
+        $this->db->where('status_stories',0);
+        return $this->db->get('content')->result_array();
+    }
+
+    public function getStoriesByUsernameStatus1()
+    {
+        $this->db->where('username',$this->session->userdata('username'));
+        $this->db->where('status_stories',1);
         return $this->db->get('content')->result_array();
     }
 
