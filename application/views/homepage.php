@@ -32,7 +32,8 @@
     <div class="col-sm-10">
     <div class="homepagebox2">
         <?php foreach ($stories as $val) : ?>
-            <div class="card sm-">
+            <div class="card-content">
+            <div class="card sm-" >
             <h5 class="card-header"></h5>
             <div class="card-body">
                 <h5 class="card-title"><a href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a></h5>
@@ -40,6 +41,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
             </div>      
+            </div>
         <?php endforeach; ?>
     </div>
     </div>
