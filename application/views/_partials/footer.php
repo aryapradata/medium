@@ -10,6 +10,7 @@
             </tr>
             <tr>
                 <td>
+                    <div class="footer">
                     <div class="link">
                         <ul class="nav justify-content-center">
                                 <a href="<?php echo base_url('Auth/registration'); ?>">GET STARTED</a>  
@@ -39,7 +40,9 @@
                                 <a class="nav-link" href="#">Legal</a>
                               </li>
                           </ul>
+                    </div>
                 </td>
+
             </tr>
             </table>
             

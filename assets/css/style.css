@@ -87,12 +87,12 @@ h4{
     margin-top:50px;
 }
 
-a{
+.footer a{
     color: white;
 }
 
-a:hover{
-    color: white;
+.footer a:hover{
+    color: blueviolet;
 }
 
 .boxcentang{
@@ -318,6 +318,7 @@ a:hover{
     color: white;
     background:grey;
     margin : 0 auto;
+<<<<<<< HEAD
    
 
 }
@@ -339,7 +340,33 @@ a:hover{
 .content h4{
     color: rgba(0, 0, 0, 0.54);
     font-weight: bold;
+=======
+    margin-top: 50px;
+  
+>>>>>>> 6e75204a3a7e4032d0b9b46a2bf471b39d0841d9
 }
+
+.homepagebox{
+
+    width: 150px;  
+    height: 350px;
+    background : white;
+    border-style: solid;
+    border-color: coral;
+    border-width: thick;
+    margin : auto;
+    border-radius: 30px;
+    position: fixed;
+
+}
+
+.homepagebox2{
+    box-shadow: 12px 12px 8px grey;
+    border-color: black;
+    
+}
+
+
 
 
 
