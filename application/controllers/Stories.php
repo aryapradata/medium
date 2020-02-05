@@ -14,7 +14,15 @@ class Stories extends CI_Controller {
 
 	public function index()
 	{
-		$data['stories'] = $this->Stories_model->getStoriesByStatus();
+		if($this->input->post('submit'))
+		{
+			$data['search'] = $this->input->post('search');
+		}
+		else
+		{
+			$data['search'] = null;
+		}
+		$data['stories'] = $this->Stories_model->getStoriesByStatus($data['search']);
 		$this->load->view('homepage',$data);
 	}
 
@@ -83,13 +91,13 @@ class Stories extends CI_Controller {
 
 	public function update_form($id)
 	{
-		$data['stories'] = $this->Stories_model->getStoryById($id);
+		$data['stories'] = $this->Stories_model->getStoriesById($id);
 		$this->load->view('stories/update_stories',$data);
 	}
 
 	public function open_stories($id)
 	{
-		$data['stories'] = $this->Stories_model->getStoryById($id);
+		$data['stories'] = $this->Stories_model->getStoriesById($id);
 		$this->load->view('stories/open_stories',$data);
 	}
 
@@ -115,5 +123,4 @@ class Stories extends CI_Controller {
 	{
 		$this->load->view('stories/your_stories');
 	}
-
 }

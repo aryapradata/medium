@@ -7,6 +7,11 @@
     <title>Home Page</title>
 </head>
 <body>
+    <form action="<?= base_url(); ?>stories" method="post">
+        <input type="search" name="search" placeholder="Search">
+        <input type="submit" name="submit" value="Search">
+    </form>
+    <br>
     <table border="1">
         <?php foreach ($stories as $val) : ?>
             <tr>

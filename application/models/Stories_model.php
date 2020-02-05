@@ -1,12 +1,7 @@
 <?php
 
 class Stories_model extends CI_Model{
-    public function getAllStories()
-    {
-        return $this->db->get('content')->result_array();
-    }
-
-    public function getStoryById($id)
+    public function getStoriesById($id)
     {
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
@@ -30,8 +25,12 @@ class Stories_model extends CI_Model{
         return $this->db->get('content')->result_array();
     }
 
-    public function getStoriesByStatus()
+    public function getStoriesByStatus($search = null)
     {
+        if($search)
+        {
+            $this->db->like('title',$search);
+        }
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
