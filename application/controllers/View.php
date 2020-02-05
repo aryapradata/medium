@@ -20,5 +20,9 @@ class View extends CI_Controller {
     {
         $this->load->view('isi1');
     }
+    public function isi2 ()
+    {
+        $this->load->view('isi2');
+    }
 
 }

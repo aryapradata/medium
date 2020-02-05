@@ -319,7 +319,26 @@ a:hover{
     background:grey;
     margin : 0 auto;
    
-  
+
+}
+.header-content{
+    color: rgba(0, 0, 0, 0.54);
+}
+.content{  
+    font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;  
+}
+.content-size{
+    font-size: 14;
+}
+.content-size p{
+    font-size: 19;
+}
+.content-quotes{
+    font-style: italic;
+}
+.content h4{
+    color: rgba(0, 0, 0, 0.54);
+    font-weight: bold;
 }
 
 
