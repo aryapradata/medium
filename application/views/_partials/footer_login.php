@@ -13,6 +13,7 @@
             </tr>
             <tr>
                 <td>
+                <div class="footer">
                 <div class="link">
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
@@ -31,6 +32,7 @@
                                 <a class="nav-link" href="#">Legal</a>
                               </li>
                           </ul>
+                </div>
                 </div>
                 </td>
             </tr>

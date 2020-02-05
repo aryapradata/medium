@@ -87,12 +87,12 @@ h4{
     margin-top:50px;
 }
 
-a{
+.footer a{
     color: white;
 }
 
-a:hover{
-    color: white;
+.footer a:hover{
+    color: blueviolet;
 }
 
 .boxcentang{
@@ -318,9 +318,31 @@ a:hover{
     color: white;
     background:grey;
     margin : 0 auto;
-   
+    margin-top: 50px;
   
 }
+
+.homepagebox{
+
+    width: 150px;  
+    height: 350px;
+    background : white;
+    border-style: solid;
+    border-color: coral;
+    border-width: thick;
+    margin : auto;
+    border-radius: 30px;
+    position: fixed;
+
+}
+
+.homepagebox2{
+    box-shadow: 12px 12px 8px grey;
+    border-color: black;
+    
+}
+
+
 
 
 
