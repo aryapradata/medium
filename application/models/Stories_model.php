@@ -1,6 +1,7 @@
 <?php
 
-class Stories_model extends CI_Model{
+class Stories_model extends CI_Model
+{
     public function getAllStories()
     {
         return $this->db->get('content')->result_array();
@@ -11,14 +12,14 @@ class Stories_model extends CI_Model{
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
-        $this->db->where('status_stories',1);
-        $this->db->where('content_id',$id);
+        $this->db->where('status_stories', 1);
+        $this->db->where('content_id', $id);
         return $this->db->get()->result_array();
     }
 
     public function getStoryByUsername()
     {
-        $this->db->where('username',$this->session->userdata('username'));
+        $this->db->where('username', $this->session->userdata('username'));
         return $this->db->get('content')->result_array();
     }
 
@@ -27,7 +28,7 @@ class Stories_model extends CI_Model{
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
-        $this->db->where('status_stories',1);
+        $this->db->where('status_stories', 1);
         return $this->db->get()->result_array();
     }
 
@@ -38,10 +39,11 @@ class Stories_model extends CI_Model{
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content'),
             'media' => $this->input->post('media'),
-            'status_stories' => 0
+            'status_stories' => 0,
+            'clap' => 0
         ];
 
-        $this->db->insert('content',$data);
+        $this->db->insert('content', $data);
     }
 
     public function createStoriesTitleNull()
@@ -51,10 +53,11 @@ class Stories_model extends CI_Model{
             'title' => "No Title",
             'content' => $this->input->post('content'),
             'media' => $this->input->post('media'),
-            'status_stories' => 0
+            'status_stories' => 0,
+            'clap' => 0
         ];
 
-        $this->db->insert('content',$data);
+        $this->db->insert('content', $data);
     }
 
     public function createStoriesContentNull()
@@ -64,10 +67,11 @@ class Stories_model extends CI_Model{
             'title' => $this->input->post('title'),
             'content' => "No Content",
             'media' => $this->input->post('media'),
-            'status_stories' => 0
+            'status_stories' => 0,
+            'clap' => 0
         ];
 
-        $this->db->insert('content',$data);
+        $this->db->insert('content', $data);
     }
 
     public function createStoriesMediaNull()
@@ -77,10 +81,11 @@ class Stories_model extends CI_Model{
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content'),
             'media' => "No Media",
-            'status_stories' => 0
+            'status_stories' => 0,
+            'clap' => 0
         ];
 
-        $this->db->insert('content',$data);
+        $this->db->insert('content', $data);
     }
 
     public function updateStories($id)
@@ -91,8 +96,8 @@ class Stories_model extends CI_Model{
             'media' => $this->input->post('media')
         ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', $data);
     }
 
     public function updateStoriesTitleNull($id)
@@ -103,8 +108,8 @@ class Stories_model extends CI_Model{
             'media' => $this->input->post('media')
         ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', $data);
     }
 
     public function updateStoriesContentNull($id)
@@ -115,8 +120,8 @@ class Stories_model extends CI_Model{
             'media' => $this->input->post('media')
         ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', $data);
     }
 
     public function updateStoriesMediaNull($id)
@@ -127,20 +132,19 @@ class Stories_model extends CI_Model{
             'media' => "No Media"
         ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', $data);
     }
 
     public function deleteStories($id)
     {
-        $this->db->where('content_id',$id);
+        $this->db->where('content_id', $id);
         $this->db->delete('content');
     }
 
     public function publish($id)
     {
-        $this->db->where('content_id',$id);
-        $this->db->update('content',['status_stories' => 1]);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', ['status_stories' => 1]);
     }
-
 }
