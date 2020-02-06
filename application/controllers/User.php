@@ -5,6 +5,7 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('User_model');
         $this->load->library('form_validation');
     }
     public function index()
@@ -12,7 +13,8 @@ class User extends CI_Controller
         if (!($this->session->userdata('email'))) {
             redirect('Auth');
         }
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['comment'] = $this->User_model->getCommentByUsername($this->session->userdata('username'));
+        $data['user'] = $this->User_model->getUserByEmail();
         $this->load->view('user/user_profile', $data);
     }
 
@@ -27,7 +29,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[8]|is_unique[user.username]', [
             'is_unique' => "This username has already registered!"
         ]);
-        $data['user'] = $this->db->get_where('user', ['user_id' => $id])->row_array();
+        $data['user'] = $this->User_model->getUserById($id);
         $this->load->view('user/edit_profile', $data);
     }
 
@@ -56,7 +58,7 @@ class User extends CI_Controller
         $this->db->where('user_id', $id);
         $this->db->update('user', $temp);
 
-        $data['user'] = $this->db->get_where('user', ['user_id' => $id])->row_array();
+        $data['user'] = $this->User_model->getUserById($id);
         redirect('user', $data);
     }
 
@@ -65,11 +67,19 @@ class User extends CI_Controller
         if (!$this->session->userdata('email')) {
             redirect('user');
         }
-        $data['user'] = $this->db->get_where('user', ['username' => $username])->row_array();
-        if ($data['user']['email'] == $this->session->userdata('email')) {
+        $data['user'] = $this->User_model->getUserByUsername($username);
+
+        if ($data['user'] == $this->session->userdata('email')) 
+        {
+            $data['comment'] = $this->User_model->getCommentByUsername($username);
             $this->load->view('user/user_profile', $data);
-        } else {
+		    $this->load->view('user/peek_profile', $data);
+        } 
+        else 
+        {
+            $data['published'] = $this->User_model->getStoriesByUsernameStatus1($username);
             $this->load->view('user/peek_profile', $data);
         }
+
     }
 }

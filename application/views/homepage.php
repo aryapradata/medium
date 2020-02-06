@@ -24,7 +24,7 @@
         <a href="<?= base_url(); ?>stories/create_form">Create Story</a>
         <br>
         <a href="<?= base_url(); ?>stories/your_stories">Your Stories</a>
-    </table>  
+    </table>
     <a href="<?= base_url(); ?>user">See My Profile</a>
     <a href="<?= base_url(); ?>auth/logout">Logout</a>
 </body>

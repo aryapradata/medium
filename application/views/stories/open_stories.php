@@ -14,7 +14,27 @@
         <p><?= $val['content']; ?></p>
         <br>
         <p><a href="<?= base_url(); ?>user/get_user/<?= $val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
+        
+        <br><br>
+
+        <form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
+            <input type="text" name="comment" placeholder="Comment...">
+            <button type="submit">Submit</button>
+        </form>
     <?php endforeach; ?>
+    <br><br>
+    <?php foreach ($comment as $val) : ?>
+        <table border="1">
+            <tr>
+                <td>
+                    <b><?= $val['first_name']; ?> <?= $val['last_name']; ?></b>
+                    <p><?= $val['comment']; ?></p>
+                    <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
+                </td>
+            </tr>
+        </table>
+    <?php endforeach; ?>
+
     <a href="<?= base_url(); ?>stories/index">Back</a>
 </body>
 </html>
