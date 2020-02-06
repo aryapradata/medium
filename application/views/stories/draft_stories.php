@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
+    
+    <?php $this->load->view("_partials/header_isi1.php"); ?>
+    <?php $this->load->view("_partials/draft_header.php"); ?>
 </head>
 <body>
-    <table border="2">
-        <thead>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Media</th>
-        </thead>
-        <?php foreach ($stories as $val) : ?>
-            <tr>
-                <td><a href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a></td>
-                <td><?= $val['content']; ?></td>
-                <td><?= $val['media']; ?></td>
-                <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
-                <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
-            </tr>
-        <?php endforeach; ?>
-        <a href="<?= base_url(); ?>stories/index">Back</a>
-    </table>
+    <?php foreach ($stories as $val) : ?>
+        <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight">
+                <div class="container">
+                    <div class="title-content-draft">
+                        <a class="text-decoration-none" href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a>
+                    </div>
+                    <div class="content-draft">
+                         <a class="text-decoration-none" href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
+                    </div>
+                    <hr>
+                </div>  
+            </div>
+        </div>
+    <?php endforeach; ?>
+
+    
 </body>
 </html>
+
+
+                <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
+                <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
