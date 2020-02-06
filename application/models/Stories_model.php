@@ -11,14 +11,14 @@ class Stories_model extends CI_Model{
         return $this->db->get()->result_array();
     }
 
-    public function getStoriesByUsernameStatus0()
+    public function getStoriesByMyUsernameStatus0()
     {
         $this->db->where('username',$this->session->userdata('username'));
         $this->db->where('status_stories',0);
         return $this->db->get('content')->result_array();
     }
 
-    public function getStoriesByUsernameStatus1()
+    public function getStoriesByMyUsernameStatus1()
     {
         $this->db->where('username',$this->session->userdata('username'));
         $this->db->where('status_stories',1);
@@ -35,6 +35,15 @@ class Stories_model extends CI_Model{
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
         $this->db->where('status_stories',1);
+        return $this->db->get()->result_array();
+    }
+
+    public function getCommentByContentId($id)
+    {
+        $this->db->select('comment.*, user.first_name, user.last_name');
+        $this->db->from('user');
+        $this->db->join('comment', 'comment.username = user.username');
+        $this->db->where('content_id',$id);
         return $this->db->get()->result_array();
     }
 
@@ -142,6 +151,8 @@ class Stories_model extends CI_Model{
     {
         $this->db->where('content_id',$id);
         $this->db->delete('content');
+        $this->db->where('content_id',$id);
+        $this->db->delete('comment');
     }
 
     public function publish($id)
@@ -150,4 +161,29 @@ class Stories_model extends CI_Model{
         $this->db->update('content',['status_stories' => 1]);
     }
 
+    public function addComment($id)
+    {
+        $data = [
+            'username' => $this->session->userdata('username'),
+            'content_id' => $id,
+            'comment' => $this->input->post('comment')
+        ];
+        $this->db->insert('comment',$data);
+    }
+
+    public function deleteComment($contentid,$commentid)
+    {
+        $this->db->where('comment_id',$commentid);
+        $this->db->delete('comment');
+    }
+
+    public function updateComment($contentid,$commentid)
+    {
+        $data = [
+            'comment' => $this->input->post('comment')
+        ];
+
+        $this->db->where('comment_id',$commentid);
+        $this->db->update('comment',$data);
+    }
 }

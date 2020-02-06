@@ -85,7 +85,7 @@ class Stories extends CI_Controller {
 
 	public function drafts()
 	{
-		$data['stories'] = $this->Stories_model->getStoriesByUsernameStatus0();
+		$data['stories'] = $this->Stories_model->getStoriesByMyUsernameStatus0();
 		$this->load->view('stories/draft_stories',$data);
 	}
 
@@ -98,6 +98,7 @@ class Stories extends CI_Controller {
 	public function open_stories($id)
 	{
 		$data['stories'] = $this->Stories_model->getStoriesById($id);
+		$data['comment'] = $this->Stories_model->getCommentByContentId($id);
 		$this->load->view('stories/open_stories',$data);
 	}
 
@@ -115,7 +116,7 @@ class Stories extends CI_Controller {
 
 	public function published()
 	{
-		$data['published'] = $this->Stories_model->getStoriesByUsernameStatus1();
+		$data['published'] = $this->Stories_model->getStoriesByMyUsernameStatus1();
 		$this->load->view('stories/published_stories', $data);
 	}
 
@@ -123,4 +124,37 @@ class Stories extends CI_Controller {
 	{
 		$this->load->view('stories/your_stories');
 	}
+
+	public function createComment($id)
+	{
+		$this->form_validation->set_rules('comment','Comment','required');
+		
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view('stories/open_stories');
+        }
+        else {
+        	$this->Stories_model->addComment($id);
+			redirect('stories/open_stories/' . $id);
+        }
+	}
+
+	public function updateComment($contentid,$commentid)
+	{
+		$this->form_validation->set_rules('comment','Comment','required');
+		
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view('stories/open_stories');
+        }
+        else {
+        	$this->Stories_model->updateComment($contentid,$commentid);
+			redirect('stories/open_stories/' . $contentid);
+        }
+	}
+
+	public function deleteComment($contentid,$commentid)
+	{
+		$this->Stories_model->deleteComment($contentid,$commentid);
+		redirect('stories/open_stories/' . $contentid);
+	}
+
 }
