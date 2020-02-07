@@ -47,4 +47,4 @@
     			<?php endforeach; ?>
 
 
-    			<?php $this->load->view("_partials/footer.php"); ?>
+    			<?php $this->load->view("_partials/footer_login.php"); ?>
