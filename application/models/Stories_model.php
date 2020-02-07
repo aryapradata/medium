@@ -147,4 +147,17 @@ class Stories_model extends CI_Model
         $this->db->where('content_id', $id);
         $this->db->update('content', ['status_stories' => 1]);
     }
+
+    public function insertCelap($data){
+        return $this->db->insert('celap', $data);
+    }
+ 
+    public function updateCelap($data){
+        return $this->db->update('celap', $data); 
+    }
+
+    public function getClap()
+    {
+        return $this->db->get('celap')->result_array();
+    }
 }

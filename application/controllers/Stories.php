@@ -119,4 +119,42 @@ class Stories extends CI_Controller {
         redirect('stories/open_stories/' . $id);
     }
 
+    // private function _uploadImage(){
+    //     $config['upload_path'] = './assets/images/';
+    //     $config['alloweed_types'] = 'jpg|png';
+    //     $config['file_name'] = ;
+    //     $config['overwrite'] = true;
+    //     $config['max_size'] = 1024;
+
+    //     $this->load->library('upload', $config);
+    // }
+
+    function tambah_celap(){
+        $data = array('clap'=>$this->input->post('clapCount'));
+        
+        if (isset($_POST['submit'])){
+	        $data = array('clap'=>$this->input->post('clapCount'));
+	       
+		$this->Stories_model->updateCelap($data);
+		
+	}else{
+            $data = array('clap'=>$this->input->post('clapCount'));
+            $this->Stories_model->insertCelap($data);
+		$id = $this->db->insert_id();
+	}
+
+    }
+     
+    function autosave_celap(){
+            $data = array('clap'=>$this->input->post('clapCount'));
+        $this->Stories_model->updateCelap($data);
+        echo $this->input->post('clapCount');
+    }
+
+    function celap(){
+        $data['clap'] = $this->Stories_model->getClap()[0]['clap'];
+        
+        $this->load->view('celap/celap', $data);
+    }
+
 }
