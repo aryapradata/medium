@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Drafts</title>
-</head>
-<body>
-    <table border="2">
-        <thead>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Media</th>
-        </thead>
-        <?php foreach ($stories as $val) : ?>
-            <tr>
-                <td><a href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a></td>
-                <td><?= $val['content']; ?></td>
-                <td><img src="<?= base_url().'images/'.$val['media']?>" alt="" height="300" width="450"></td>
-                <?php if ($val['title'] != null) : ?>
-                    <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
-                <?php endif; ?>
-                <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
-            </tr>
-        <?php endforeach; ?>
-        <a href="<?= base_url(); ?>stories/your_stories">Back</a>
-    </table>
-</body>
-</html>
-=======
-
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -53,8 +20,10 @@
     							<span class="sr-only">Toggle Dropdown</span>
     						</button>
     						<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-    							<a class="dropdown-item"
-    								href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
+                                <a class="dropdown-item"
+                                <?php if ($val['title'] != null) : ?>
+                                    href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
+                                <?php endif; ?>
     							<a class="dropdown-item"
     								href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
     						</div>
@@ -65,7 +34,8 @@
     				<div class="content-draft">
     					<a class="text-decoration-none"
     						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
-    				</div>
+                    </div>
+                    <img src="<?= base_url().'images/'.$val['media']?>" alt="" height="300" width="450">
     				<hr>
     			</div>
     		</div>
@@ -90,5 +60,3 @@
 
     </body>
 </html>
-
->>>>>>> 9839e6029adc6c4b95e83f51690b77326b75b702

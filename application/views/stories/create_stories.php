@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Stories</title>
-</head>
-<body>
-    <?php echo form_open_multipart('stories/createAction');?>
-        Title: <input type="text" name="title"><br>
-        Content: <input type="text" name="content"><br>
-        Media: <input type="file" name="media"><br>
-        <input type="submit" name="submit" value="submit">
-    </form>
-</body>
-</html>
-=======
-
 <?php $this->load->view("_partials/header_login.php"); ?>
 
 <div class="csbg">
@@ -31,7 +11,7 @@
 				<br>
 				<pre>All on Medium, all for you.</pre>
 				<hr>
-				<form action="<?= base_url(); ?>stories/create" method="post">
+				<?php echo form_open_multipart('stories/createAction');?>
 					<table border="0">
 						<tr>
 							<td><b>Title</b></td>
@@ -52,7 +32,7 @@
 						</tr>
 					</table>
 					<hr>
-					<button type="submit">Submit</button>
+					<input type="submit" name="submit" value="Submit">
 					<hr>
 				</form>
 			</div>
@@ -61,5 +41,3 @@
 </div>
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
-
->>>>>>> 9839e6029adc6c4b95e83f51690b77326b75b702

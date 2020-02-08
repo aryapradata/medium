@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php foreach ($stories as $val) : ?>
-        <title><?= $val['title']; ?></title>
-    <?php endforeach; ?>
-</head>
-<body>
-    <?php foreach ($stories as $val) : ?>
-        <img src="<?= base_url().'images/'.$val['media']?>" alt="">
-        <h3><?= $val['title']; ?></h3>
-        <p><?= $val['content']; ?></p>
-        <br>
-        <p><a href="<?= base_url(); ?>user/get_user/<?= $val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
-        
-        <br><br>
-
-        <form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
-            <input type="text" name="comment" placeholder="Comment...">
-            <button type="submit">Submit</button>
-        </form>
-    <?php endforeach; ?>
-    <br><br>
-    <?php foreach ($comment as $val) : ?>
-        <table border="1">
-            <tr>
-                <td>
-                    <b><?= $val['first_name']; ?> <?= $val['last_name']; ?></b>
-                    <p><?= $val['comment']; ?></p>
-                    <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
-                </td>
-            </tr>
-        </table>
-    <?php endforeach; ?>
-
-    <a href="<?= base_url(); ?>stories/index">Back</a>
-</body>
-</html>
-=======
-
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
 
@@ -68,7 +24,7 @@
     			</div>
     		</div>
 
-    		<a href=""><img src="<?= base_url('assets/img/content/c1.png')?>" width="1100" height="400"></a>
+    		<a href=""><img src="<?= base_url().'images/'.$val['media']?>" alt=""></a>
     		<br>
     		<div class="container content content-size">
     			<div class="row">
@@ -111,9 +67,3 @@
 
     			<?php $this->load->view("_partials/footer_login.php"); ?>
 
-
-		<?php endforeach; ?>
-
-    	<?php $this->load->view("_partials/footer_login.php"); ?>
-
->>>>>>> 9839e6029adc6c4b95e83f51690b77326b75b702
