@@ -32,16 +32,13 @@
     				<div class="col-sm-2">
     					<p></p>
     				</div>
-    				<div class="col-7">
-    					<p>
-    						<?= $val['content']; ?>
-    					</p>
+    				<div class="col-7">>
+						<p>
+							<?= $val['content']; ?>  
+						</p>						
     				</div>
     				<div class="col ">
-    					<br>
-    					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-    						<a href="<?= base_url(); ?>stories/index">Back</a>
-    					</button>
+    					
     				</div>
               <p><a href="<?= base_url(); ?>user/get_user/<?= $val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
             
@@ -53,6 +50,7 @@
 				</div>
 			</div>
 		</div>
+
     	<?php endforeach; ?>
       
         <?php foreach ($comment as $val) : ?>
@@ -69,4 +67,9 @@
 
 
     			<?php $this->load->view("_partials/footer_login.php"); ?>
+
+
+		<?php endforeach; ?>
+
+    	<?php $this->load->view("_partials/footer_login.php"); ?>
 
