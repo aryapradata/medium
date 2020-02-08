@@ -53,8 +53,8 @@
 
 
 
-    <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
-    <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
+    
+    
 
     </body>
 </html>

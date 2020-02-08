@@ -69,7 +69,7 @@
     			<?php $this->load->view("_partials/footer_login.php"); ?>
 
 
-		<?php endforeach; ?>
+	
 
     	<?php $this->load->view("_partials/footer_login.php"); ?>
 
