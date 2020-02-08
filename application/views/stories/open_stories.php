@@ -42,9 +42,10 @@
     						<a href="<?= base_url(); ?>stories/index">Back</a>
     					</button>
     				</div>
-
-    			</div>
-    			<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+    	<?php endforeach; ?>
 
 
     			<?php $this->load->view("_partials/footer_login.php"); ?>
