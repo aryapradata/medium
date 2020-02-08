@@ -31,11 +31,10 @@
     				<div class="col-sm-2">
     					<p></p>
     				</div>
-    				<div class="col-7">
-    					<p>
-    						<?= $val['content']; ?>
-						</p>
-						
+    				<div class="col-7">>
+						<p>
+							<?= $val['content']; ?>  
+						</p>						
     				</div>
     				<div class="col ">
     					
@@ -44,5 +43,5 @@
 			</div>
 		</div>
 		<?php endforeach; ?>
-		
+
     	<?php $this->load->view("_partials/footer_login.php"); ?>
