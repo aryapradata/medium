@@ -36,6 +36,16 @@
                 } ?></td>
         </tr>
     </table>
+    <table>
+    <?php foreach ($clap as $value) : ?>
+        <tr>
+            <td>title</td>
+            <td>:</td>
+            <td><a href="<?= base_url("stories/open_stories/").$value['content_id'] ?>"><?= $value['title'] ?></a></td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+    
 </body>
 
 </html>

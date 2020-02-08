@@ -10,7 +10,9 @@ class User extends CI_Controller {
             redirect('Auth');
         }
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['clap'] = $this->userGetClappedStories($this->session->userdata('username'));
         $this->load->view('user/user_profile', $data);
+
     }
 
     public function get_data($id) {
@@ -75,6 +77,7 @@ class User extends CI_Controller {
             redirect('user');
         }
         $data['user'] = $this->db->get_where('user', ['username' => $username])->row_array();
+        $data['clap'] = $this->userGetClappedStories($username);
         if ($data['user']['email'] == $this->session->userdata('email')) {
             $this->load->view('user/user_profile', $data);
         } else {
@@ -84,9 +87,8 @@ class User extends CI_Controller {
     public function userGetClappedStories($username) {
         $this->db->select('clap.*, content.title');
         $this->db->from('clap');
-        $this->db->join('clap', 'clap.content_id = content.content_id');
-        $this->db->where('clap.username', $username)->result_array();
-        $data = $this->db->get()->result_array();
-        redirect('User', $data);
+        $this->db->join('content', 'clap.content_id = content.content_id');
+        $this->db->where('clap.username', $username);
+        return $this->db->get()->result_array();
     }
 }
