@@ -8,11 +8,11 @@
 </head>
 <body>
 <?php foreach ($stories as $val) : ?>
-    <form action="<?= base_url(); ?>stories/update/<?= $val['content_id']; ?>" method="post">
+    <?php echo form_open_multipart('stories/updateAction/' . $val['content_id'] );?>
         Title: <input type="text" name="title" value="<?= $val['title']; ?>"><br>
         Content: <input type="text" name="content" value="<?= $val['content']; ?>"><br>
-        Media: <input type="file" name="media" value="<?= $val['media']; ?>"><br>
-        <button type="submit">Update</button>
+        Media: <input type="file" name="media" value="<?= base_url().'images/'.$val['media']?>"><br>
+        <input type="submit" name="submit" value="Submit">
     </form>
 <?php endforeach; ?>
 </body>

@@ -6,7 +6,6 @@ class Stories_model extends CI_Model{
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
-        $this->db->where('status_stories',1);
         $this->db->where('content_id',$id);
         return $this->db->get()->result_array();
     }
@@ -47,105 +46,122 @@ class Stories_model extends CI_Model{
         return $this->db->get()->result_array();
     }
 
-    public function createStories()
+    public function insertImage(){
+        $config['upload_path']='./images/';
+        $config['allowed_types']='jpg|png|jpeg';
+        $config['max_size']='3000';
+        $config['remove_space']= TRUE;
+
+        $this->load->library('upload',$config);
+        
+        if($this->upload->do_upload('media')){
+            $return = ['result'=>'success',
+                        'file' => $this->upload->data(),
+                        'error'=>''];
+        }else{
+            $return=['result'=>'failed',
+                    'file'=>'',
+                    'error'=>$this->upload->display_errors()];
+        }
+        
+        return $return;
+    }
+
+    public function createStories($upload)
     {
         $data = [
             'username' => $this->session->userdata('username'),
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content'),
-            'media' => $this->input->post('media'),
+            'media'=> $upload['file']['file_name'],
             'status_stories' => 0
         ];
 
         $this->db->insert('content',$data);
     }
 
-    public function createStoriesTitleNull()
-    {
-        $data = [
-            'username' => $this->session->userdata('username'),
-            'title' => "No Title",
-            'content' => $this->input->post('content'),
-            'media' => $this->input->post('media'),
-            'status_stories' => 0
-        ];
+    // public function createStoriesTitleNull()
+    // {
+    //     $data = [
+    //         'username' => $this->session->userdata('username'),
+    //         'title' => "No Title",
+    //         'content' => $this->input->post('content'),
+    //         'media' => $this->input->post('media'),
+    //         'status_stories' => 0
+    //     ];
 
-        $this->db->insert('content',$data);
+    //     $this->db->insert('content',$data);
+    // }
+
+    // public function createStoriesContentNull()
+    // {
+    //     $data = [
+    //         'username' => $this->session->userdata('username'),
+    //         'title' => $this->input->post('title'),
+    //         'content' => "No Content",
+    //         'media' => $this->input->post('media'),
+    //         'status_stories' => 0
+    //     ];
+
+    //     $this->db->insert('content',$data);
+    // }
+
+    public function updateImage(){
+        $config['upload_path']='./images/';
+        $config['allowed_types']='jpg|png|jpeg';
+        $config['max_size']='3000';
+        $config['remove_space']= TRUE;
+
+        $this->load->library('upload',$config);
+        
+        if($this->upload->do_upload('media')){
+            $return = ['result'=>'success',
+                        'file' => $this->upload->data(),
+                        'error'=>''];
+        }else{
+            $return=['result'=>'failed',
+                    'file'=>'',
+                    'error'=>$this->upload->display_errors()];
+        }
+        
+        return $return;
     }
 
-    public function createStoriesContentNull()
-    {
-        $data = [
-            'username' => $this->session->userdata('username'),
-            'title' => $this->input->post('title'),
-            'content' => "No Content",
-            'media' => $this->input->post('media'),
-            'status_stories' => 0
-        ];
-
-        $this->db->insert('content',$data);
-    }
-
-    public function createStoriesMediaNull()
-    {
-        $data = [
-            'username' => $this->session->userdata('username'),
-            'title' => $this->input->post('title'),
-            'content' => $this->input->post('content'),
-            'media' => "No Media",
-            'status_stories' => 0
-        ];
-
-        $this->db->insert('content',$data);
-    }
-
-    public function updateStories($id)
+    public function updateStories($id,$upload)
     {
         $data = [
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content'),
-            'media' => $this->input->post('media')
+            'media'=> $upload['file']['file_name']
         ];
 
         $this->db->where('content_id',$id);
         $this->db->update('content',$data);
     }
 
-    public function updateStoriesTitleNull($id)
-    {
-        $data = [
-            'title' => "No Title",
-            'content' => $this->input->post('content'),
-            'media' => $this->input->post('media')
-        ];
+    // public function updateStoriesTitleNull($id)
+    // {
+    //     $data = [
+    //         'title' => "No Title",
+    //         'content' => $this->input->post('content'),
+    //         'media' => $this->input->post('media')
+    //     ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
-    }
+    //     $this->db->where('content_id',$id);
+    //     $this->db->update('content',$data);
+    // }
 
-    public function updateStoriesContentNull($id)
-    {
-        $data = [
-            'title' => $this->input->post('title'),
-            'content' => "No Content",
-            'media' => $this->input->post('media')
-        ];
+    // public function updateStoriesContentNull($id)
+    // {
+    //     $data = [
+    //         'title' => $this->input->post('title'),
+    //         'content' => "No Content",
+    //         'media' => $this->input->post('media')
+    //     ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
-    }
-
-    public function updateStoriesMediaNull($id)
-    {
-        $data = [
-            'title' => $this->input->post('title'),
-            'content' => $this->input->post('content'),
-            'media' => "No Media"
-        ];
-
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
-    }
+    //     $this->db->where('content_id',$id);
+    //     $this->db->update('content',$data);
+    // }
 
     public function deleteStories($id)
     {

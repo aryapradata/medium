@@ -49,7 +49,7 @@
         <table border="1">
             <tr>
                 <td>
-                    <a href=""><?= $val['title']; ?></a>
+                    <a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><?= $val['title']; ?></a>
                     <p><?= $val['comment']; ?></p>
                     <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
                 </td>

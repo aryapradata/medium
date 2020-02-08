@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php foreach ($stories as $val) : ?>
+        <img src="<?= base_url().'images/'.$val['media']?>" alt="">
         <h3><?= $val['title']; ?></h3>
         <p><?= $val['content']; ?></p>
         <br>

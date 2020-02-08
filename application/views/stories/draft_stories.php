@@ -17,8 +17,10 @@
             <tr>
                 <td><a href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a></td>
                 <td><?= $val['content']; ?></td>
-                <td><?= $val['media']; ?></td>
-                <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
+                <td><img src="<?= base_url().'images/'.$val['media']?>" alt="" height="300" width="450"></td>
+                <?php if ($val['title'] != null) : ?>
+                    <td><a href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a></td>
+                <?php endif; ?>
                 <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
             </tr>
         <?php endforeach; ?>

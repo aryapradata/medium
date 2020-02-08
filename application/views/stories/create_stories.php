@@ -7,11 +7,11 @@
     <title>Create Stories</title>
 </head>
 <body>
-    <form action="<?= base_url(); ?>stories/create" method="post">
+    <?php echo form_open_multipart('stories/createAction');?>
         Title: <input type="text" name="title"><br>
         Content: <input type="text" name="content"><br>
         Media: <input type="file" name="media"><br>
-        <button type="submit">Submit</button>
+        <input type="submit" name="submit" value="submit">
     </form>
 </body>
 </html>
