@@ -1,4 +1,3 @@
-
 <?php $this->load->view("_partials/header_login.php"); ?>
 
 <div class="container">
@@ -15,37 +14,38 @@
             <hr>
             <p class="lead">
             <center>
+              <?php foreach ($user as $val) : ?>
             <table>
                     <tr>
                         <td><b>Name</b></td>
                         <td width="30px"></td>
                         <td>:</td>
-                        <td><?= $user['first_name'] . " " . $user["last_name"]; ?></td>
+                        <td><?= $val['first_name'] . " " . $val["last_name"]; ?></td>
                     </tr>
                     <tr>
                         <td><b>Username</b></td>
                         <td></td>
                         <td>:</td>
-                        <td><?= $user['username'] ?></td>
+                        <td><?= $val['username'] ?></td>
                     </tr>
                     <tr>
                         <td><b>Email</b></td>
                         <td>     </td>
                         <td>:</td>
-                        <td><?= $user['email'] ?></td>
+                        <td><?= $val['email'] ?></td>
                     </tr>
                     <tr>
                         <td><b>Bio</b></td>
                         <td>    </td>
                         <td>:</td>
-                        <td><?= $user['bio'] ?></td>
+                        <td><?= $val['bio'] ?></td>
                     </tr>
                     <tr>
                         <td><b>Status</b></td>
                         <td>   </td>
                         <td>:</td>
                         <td><?php
-                            if ($user['role_id'] == 1) {
+                            if ($val['role_id'] == 1) {
                                 echo "Administrator";
                             } else {
                                 echo "User";
@@ -53,7 +53,20 @@
                     </tr>
                 </table>
                 <br>
-                <button type="button" class="btn btn-info"><a href="<?= base_url("user/get_data/" . $user['user_id']); ?>">Edit Profile</a></button>
+                <button type="button" class="btn btn-info"><a href="<?= base_url("user/get_data/" . $val['user_id']); ?>">Edit Profile</a></button>
+              <?php endforeach; ?>
+              
+              <?php foreach ($comment as $val) : ?>
+        <table border="1">
+            <tr>
+                <td>
+                    <a href=""><?= $val['title']; ?></a>
+                    <p><?= $val['comment']; ?></p>
+                    <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
+                </td>
+            </tr>
+        </table>
+    <?php endforeach; ?>
                 <button type="button" class="btn btn-danger"><a href="<?= base_url('auth/logout'); ?>">LOGOUT</a></button>
                 <button type="button" class="btn btn-dark"><a href="<?= base_url(); ?>stories/index">BACK</a></button>
             </center>
@@ -88,3 +101,4 @@ what matters to you.</pre>
 
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
+
