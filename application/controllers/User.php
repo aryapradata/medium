@@ -54,8 +54,8 @@ class User extends CI_Controller {
             $this->db->get_where('comment', ['username' => $this->session->userdata('username')]);
             $this->db->where('username', $this->session->userdata('username'));
             $this->db->update('comment', $qtemp);
-}
-;
+        }
+        ;
 
         $temp = array(
             'first_name' => $first_name,
@@ -80,5 +80,13 @@ class User extends CI_Controller {
         } else {
             $this->load->view('user/peek_profile', $data);
         }
+    }
+    public function userGetClappedStories($username) {
+        $this->db->select('clap.*, content.title');
+        $this->db->from('clap');
+        $this->db->join('clap', 'clap.content_id = content.content_id');
+        $this->db->where('clap.username', $username)->result_array();
+        $data = $this->db->get()->result_array();
+        redirect('User', $data);
     }
 }
