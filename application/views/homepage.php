@@ -1,9 +1,6 @@
 <?php $this->load->view("_partials/header_login.php"); ?>
 
- <form action="<?= base_url(); ?>stories" method="post">
-        <input type="search" name="search" placeholder="Search">
-        <input type="submit" name="submit" value="Search">
- </form>
+
 
 <div class="container mt-5">
 	<div class="row">
