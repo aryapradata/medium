@@ -34,18 +34,15 @@
     				<div class="col-7">
     					<p>
     						<?= $val['content']; ?>
-    					</p>
+						</p>
+						
     				</div>
     				<div class="col ">
-    					<br>
-    					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-    						<a href="<?= base_url(); ?>stories/index">Back</a>
-    					</button>
+    					
     				</div>
 				</div>
 			</div>
 		</div>
-    	<?php endforeach; ?>
-
-
-    			<?php $this->load->view("_partials/footer_login.php"); ?>
+		<?php endforeach; ?>
+		
+    	<?php $this->load->view("_partials/footer_login.php"); ?>

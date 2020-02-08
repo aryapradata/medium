@@ -29,9 +29,6 @@
 								<a class="nav-link" href="<?= base_url(); ?>stories/drafts">Drafts<span
 										class="sr-only">(current)</span></a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="<?= base_url(); ?>stories/drafts">Published</a>
-							</li>
 						</ul>
 					</div>
 				</nav>
