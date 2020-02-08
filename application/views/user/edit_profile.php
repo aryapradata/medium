@@ -1,3 +1,4 @@
+
 <?php $this->load->view("_partials/header_login.php"); ?>
 
     <div class="container">
@@ -13,13 +14,14 @@
             <h3 class="display-4"><b>Edit Your Profile!</b></h3>
             <hr>
             <center>
-                <form action="<?= base_url("User/edit_profile/" . $user['user_id']); ?>" method="post">
+              <?php foreach ($user as $val) : ?>
+                <form action="<?= base_url("User/edit_profile/" . $val['user_id']); ?>" method="post">
                     <table>
                         <tr>
                             <td><b>First Name</b></td>
                             <td width="20px"></td>
                             <td>:</td>
-                            <td><input type="text" name="first_name" id="first_name" placeholder="First Name" value="<?= $user['first_name'] ?>" size="40"></td>
+                            <td><input type="text" name="first_name" id="first_name" placeholder="First Name" value="<?= $val['first_name'] ?>" size="40"></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -30,20 +32,20 @@
                             <td><b>Last Name</b></td>
                             <td></td>
                             <td>:</td>
-                            <td><input type="text" name="last_name" id="last_name" placeholder="last Name" value="<?= $user['last_name'] ?>" size="40"></td>
+                            <td><input type="text" name="last_name" id="last_name" placeholder="last Name" value="<?= $val['last_name'] ?>" size="40"></td>
                         </tr>
                         <tr>
                             <td><b>username</b></td>
                             <td></td>
                             <td>:</td>
-                            <td><input type="text" name="username" id="username" placeholder="username" value="<?= $user['username'] ?>" size="40"></td>
+                            <td><input type="text" name="username" id="username" placeholder="username" value="<?= $val['username'] ?>" size="40"></td>
                             <td><small class="text-danger"><?= form_error('username') ?></small></td>
                         </tr>
                         <tr>
                             <td><b>Bio</b></td>
                             <td></td>
                             <td>:</td>
-                            <td><input type="text" name="bio" id="bio" placeholder="Bio" value="<?= $user['bio'] ?>" size="40"></td>
+                            <td><input type="text" name="bio" id="bio" placeholder="Bio" value="<?= $val['bio'] ?>" size="40"></td>
                         </tr>
                        
                     </table>
@@ -52,6 +54,7 @@
                     <button type="submit" class="btn btn-info">SUBMIT</button>
 
                 </form>
+                <?php endforeach; ?>
             </p>
             </div>
         </div>
@@ -81,3 +84,4 @@ knowledge, and perspectives.</pre>
 
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
+

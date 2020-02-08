@@ -1,5 +1,7 @@
 <?php $this->load->view("_partials/header_login.php"); ?>
 
+
+
 <div class="container mt-5">
 	<div class="row">
 		<div class="homepagebox">
@@ -17,7 +19,7 @@
 								Story<span class="sr-only">(current)</span></a>
 							</div>
 							<div class="jarak">
-							<a class="btn btn-outline-info" href="<?= base_url(); ?>stories/drafts">Drafts<span
+							<a class="btn btn-outline-info" href="<?= base_url(); ?>stories/your_stories">My Stories<span
 									class="sr-only">(current)</span></a>
 							</div>
 							<div class="jarak">
@@ -73,6 +75,7 @@ knowledge, and perspectives.</pre>
 
 
 	</div>
+
 
 
 
