@@ -24,7 +24,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('first_name', 'First_Name', 'required|trim');
         $this->form_validation->set_rules('last_name', 'Last_Name', 'trim');
         $this->form_validation->set_rules('username', 'Username', 'required|min_length[8]|is_unique[user.username]', [
-            'is_unique' => "This username has already registered!"
+            'is_unique' => "This username has already registered!",
         ]);
         $data['user'] = $this->User_model->getUserById($id);
         $this->load->view('user/edit_profile', $data);
@@ -34,7 +34,7 @@ class User extends CI_Controller {
         if (!$this->session->userdata('email')) {
             redirect('user');
         }
-        
+
         $first_name = $this->input->post('first_name');
         $last_name = $this->input->post('last_name');
         $username = $this->input->post('username');
@@ -82,19 +82,17 @@ class User extends CI_Controller {
         }
         $data['clap'] = $this->userGetClappedStories($username);
         if ($data['user']['email'] == $this->session->userdata('email')) {
-        $data['user'] = $this->User_model->getUserByUsername($username);
-        $data['comment'] = $this->User_model->getCommentByUsername($username);
-          if ($data['user'] == $this->session->userdata('email')) 
-        {
-            $this->load->view('user/user_profile', $data);
-        } 
-        else 
-        {
-            $data['published'] = $this->User_model->getStoriesByUsernameStatus1($username);
-            $this->load->view('user/peek_profile', $data);
+            $data['user'] = $this->User_model->getUserByUsername($username);
+            $data['comment'] = $this->User_model->getCommentByUsername($username);
+            if ($data['user'] == $this->session->userdata('email')) {
+                $this->load->view('user/user_profile', $data);
+            } else {
+                $data['published'] = $this->User_model->getStoriesByUsernameStatus1($username);
+                $this->load->view('user/peek_profile', $data);
+            }
         }
-
     }
+
     public function userGetClappedStories($username) {
         $this->db->select('clap.*, content.title');
         $this->db->from('clap');
