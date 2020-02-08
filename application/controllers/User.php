@@ -17,14 +17,8 @@ class User extends CI_Controller {
 
     public function get_data($id) {
         if (!$this->session->userdata('email')) {
-            redirect('user');
+            redirect('Auth');
         }
-
-        $this->form_validation->set_rules('first_name', 'First_Name', 'required|trim');
-        $this->form_validation->set_rules('last_name', 'Last_Name', 'trim');
-        $this->form_validation->set_rules('username', 'Username', 'required|min_length[8]|is_unique[user.username]', [
-            'is_unique' => "This username has already registered!",
-        ]);
         $data['user'] = $this->db->get_where('user', ['user_id' => $id])->row_array();
         $this->load->view('user/edit_profile', $data);
     }
@@ -33,6 +27,7 @@ class User extends CI_Controller {
         if (!$this->session->userdata('email')) {
             redirect('user');
         }
+        
         $first_name = $this->input->post('first_name');
         $last_name = $this->input->post('last_name');
         $username = $this->input->post('username');
@@ -70,11 +65,12 @@ class User extends CI_Controller {
         $this->session->set_userdata('username', $username);
         $data['user'] = $this->db->get_where('user', ['user_id' => $id])->row_array();
         redirect('user', $data);
+
     }
 
     public function get_user($username) {
         if (!$this->session->userdata('email')) {
-            redirect('user');
+            redirect('Auth');
         }
         $data['user'] = $this->db->get_where('user', ['username' => $username])->row_array();
         $data['clap'] = $this->userGetClappedStories($username);

@@ -7,6 +7,7 @@
 
 <body>
     <h1>REGISTER<br>MEDIUM</h1>
+    <?= $this->session->flashdata('message'); ?>
     <form action="<?php echo base_url('Auth/registration'); ?>" method="post">
         <table>
             <tr>
