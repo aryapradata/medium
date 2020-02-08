@@ -39,7 +39,11 @@
     				<div class="col ">
 
     				</div>
-    			</div>
+				</div>
+				<form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
+                  <input type="text" name="comment" placeholder="Comment...">
+                  <button type="submit">Submit</button>
+              </form>  
     		</div>
     	</div>
 
@@ -61,7 +65,3 @@
 
     	<?php $this->load->view("_partials/footer_login.php"); ?>
 
-
-
-
-    	<?php $this->load->view("_partials/footer_login.php"); ?>
