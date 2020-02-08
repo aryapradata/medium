@@ -11,19 +11,15 @@ class Stories extends CI_Controller {
         }
     }
 
-	public function index()
-	{
-		if($this->input->post('submit'))
-		{
-			$data['search'] = $this->input->post('search');
-		}
-		else
-		{
-			$data['search'] = null;
-		}
-		$data['stories'] = $this->Stories_model->getStoriesByStatus($data['search']);
-		$this->load->view('homepage',$data);
-	}
+    public function index() {
+        if ($this->input->post('submit')) {
+            $data['search'] = $this->input->post('search');
+        } else {
+            $data['search'] = null;
+        }
+        $data['stories'] = $this->Stories_model->getStoriesByStatus($data['search']);
+        $this->load->view('homepage', $data);
+    }
 
     public function create_form() {
         $this->load->view('stories/create_stories');
@@ -59,90 +55,6 @@ class Stories extends CI_Controller {
             $this->Stories_model->updateStoriesContentNull($id);
             redirect('stories/drafts');
         }
-
-	public function createAction(){
-		if($this->input->post('submit')){
-			$upload = $this->Stories_model->insertImage();
-			if($upload['result'] == "success"){
-				$this->Stories_model->createStories($upload);
-				redirect('stories/drafts');
-			}else{
-			   echo "Failed ".$upload['error'];
-			}
-		}
-	}
-
-	// public function create()
-	// {
-	// 	if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
-	// 	{
-	// 		$this->Stories_model->createStoriesTitleNull();
-	// 		redirect('stories/drafts');
-	// 	}
-
-	// 	if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
-	// 	{
-	// 		$this->Stories_model->createStoriesContentNull();
-	// 		redirect('stories/drafts');
-	// 	}
-		
-    //     else {
-	// 		$this->Stories_model->createStories();
-	// 		redirect('stories/drafts');
-	// 	}
-	// }
-
-	public function updateAction($id){
-		if($this->input->post('submit')){
-			$upload = $this->Stories_model->updateImage();
-			if($upload['result'] == "success"){
-				$this->Stories_model->updateStories($id,$upload);
-				redirect('stories/open_stories/' . $id);
-			}else{
-			   echo "Failed ".$upload['error'];
-			}
-		}
-	}
-
-	// public function update($id)
-	// {
-	// 	if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
-	// 	{
-	// 		$this->Stories_model->updateStoriesTitleNull($id);
-	// 		redirect('stories/open_stories/' . $id);
-	// 	}
-
-	// 	if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
-	// 	{
-	// 		$this->Stories_model->updateStoriesContentNull($id);
-	// 		redirect('stories/open_stories/' . $id);
-	// 	}
-		
-    //     else {
-	// 		$this->Stories_model->updateStories($id);
-	// 		redirect('stories/open_stories/' . $id);
-    //     }
-	// }
-
-	public function drafts()
-	{
-		$data['stories'] = $this->Stories_model->getStoriesByMyUsernameStatus0();
-		$this->load->view('stories/draft_stories',$data);
-	}
-
-	public function update_form($id)
-	{
-		$data['stories'] = $this->Stories_model->getStoriesById($id);
-		$this->load->view('stories/update_stories',$data);
-	}
-
-	public function open_stories($id)
-	{
-		$data['stories'] = $this->Stories_model->getStoriesById($id);
-		$data['comment'] = $this->Stories_model->getCommentByContentId($id);
-		$this->load->view('stories/open_stories',$data);
-	}
-
         if ($this->form_validation->set_rules('media', 'Media', 'required')->run() == false) {
             $this->Stories_model->updateStoriesMediaNull($id);
             redirect('stories/drafts');
@@ -152,18 +64,83 @@ class Stories extends CI_Controller {
         }
     }
 
+    public function createAction() {
+        if ($this->input->post('submit')) {
+            $upload = $this->Stories_model->insertImage();
+            if ($upload['result'] == "success") {
+                $this->Stories_model->createStories($upload);
+                redirect('stories/drafts');
+            } else {
+                echo "Failed " . $upload['error'];
+            }
+        }
+    }
+
+    // public function create()
+    // {
+    //     if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+    //     {
+    //         $this->Stories_model->createStoriesTitleNull();
+    //         redirect('stories/drafts');
+    //     }
+
+    //     if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+    //     {
+    //         $this->Stories_model->createStoriesContentNull();
+    //         redirect('stories/drafts');
+    //     }
+
+    //     else {
+    //         $this->Stories_model->createStories();
+    //         redirect('stories/drafts');
+    //     }
+    // }
+
+    public function updateAction($id) {
+        if ($this->input->post('submit')) {
+            $upload = $this->Stories_model->updateImage();
+            if ($upload['result'] == "success") {
+                $this->Stories_model->updateStories($id, $upload);
+                redirect('stories/open_stories/' . $id);
+            } else {
+                echo "Failed " . $upload['error'];
+            }
+        }
+    }
+
+    // public function update($id)
+    // {
+    //     if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+    //     {
+    //         $this->Stories_model->updateStoriesTitleNull($id);
+    //         redirect('stories/open_stories/' . $id);
+    //     }
+
+    //     if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+    //     {
+    //         $this->Stories_model->updateStoriesContentNull($id);
+    //         redirect('stories/open_stories/' . $id);
+    //     }
+
+    //     else {
+    //         $this->Stories_model->updateStories($id);
+    //         redirect('stories/open_stories/' . $id);
+    //     }
+    // }
+
     public function drafts() {
-        $data['stories'] = $this->Stories_model->getStoryByUsername();
+        $data['stories'] = $this->Stories_model->getStoriesByMyUsernameStatus0();
         $this->load->view('stories/draft_stories', $data);
     }
 
     public function update_form($id) {
-        $data['stories'] = $this->Stories_model->getStoryById($id);
+        $data['stories'] = $this->Stories_model->getStoriesById($id);
         $this->load->view('stories/update_stories', $data);
     }
 
     public function open_stories($id) {
-        $data['stories'] = $this->Stories_model->getStoryById($id);
+        $data['stories'] = $this->Stories_model->getStoriesById($id);
+        $data['comment'] = $this->Stories_model->getCommentByContentId($id);
         $this->load->view('stories/open_stories', $data);
     }
 
@@ -221,76 +198,67 @@ class Stories extends CI_Controller {
     //     $this->load->library('upload', $config);
     // }
 
-    function tambah_celap(){
-        $data = array('clap'=>$this->input->post('clapCount'));
-        
-        if (isset($_POST['submit'])){
-	        $data = array('clap'=>$this->input->post('clapCount'));
-	       
-		$this->Stories_model->updateCelap($data);
-		
-	}else{
-            $data = array('clap'=>$this->input->post('clapCount'));
+    public function tambah_celap() {
+        $data = array('clap' => $this->input->post('clapCount'));
+
+        if (isset($_POST['submit'])) {
+            $data = array('clap' => $this->input->post('clapCount'));
+
+            $this->Stories_model->updateCelap($data);
+
+        } else {
+            $data = array('clap' => $this->input->post('clapCount'));
             $this->Stories_model->insertCelap($data);
-		$id = $this->db->insert_id();
-	}
-
-
+            $id = $this->db->insert_id();
+        }
     }
-     
-    function autosave_celap(){
-            $data = array('clap'=>$this->input->post('clapCount'));
+
+    public function autosave_celap() {
+        $data = array('clap' => $this->input->post('clapCount'));
         $this->Stories_model->updateCelap($data);
         echo $this->input->post('clapCount');
     }
 
-    function celap(){
+    public function celap() {
         $data['clap'] = $this->Stories_model->getClap()[0]['clap'];
-        
+
         $this->load->view('celap/celap', $data);
     }
 
-	public function published()
-	{
-		$data['published'] = $this->Stories_model->getStoriesByMyUsernameStatus1();
-		$this->load->view('stories/published_stories', $data);
-	}
+    public function published() {
+        $data['published'] = $this->Stories_model->getStoriesByMyUsernameStatus1();
+        $this->load->view('stories/published_stories', $data);
+    }
 
-	public function your_stories()
-	{
-		$this->load->view('stories/your_stories');
-	}
+    public function your_stories() {
+        $this->load->view('stories/your_stories');
+    }
 
-	public function createComment($id)
-	{
-		$this->form_validation->set_rules('comment','Comment','required');
-		
-        if($this->form_validation->run() == FALSE) {
+    public function createComment($id) {
+        $this->form_validation->set_rules('comment', 'Comment', 'required');
+
+        if ($this->form_validation->run() == false) {
             $this->load->view('stories/open_stories');
+        } else {
+            $this->Stories_model->addComment($id);
+            redirect('stories/open_stories/' . $id);
         }
-        else {
-        	$this->Stories_model->addComment($id);
-			redirect('stories/open_stories/' . $id);
-        }
-	}
+    }
 
-	public function updateComment($contentid,$commentid)
-	{
-		$this->form_validation->set_rules('comment','Comment','required');
-		
-        if($this->form_validation->run() == FALSE) {
+    public function updateComment($contentid, $commentid) {
+        $this->form_validation->set_rules('comment', 'Comment', 'required');
+
+        if ($this->form_validation->run() == false) {
             $this->load->view('stories/open_stories');
+        } else {
+            $this->Stories_model->updateComment($contentid, $commentid);
+            redirect('stories/open_stories/' . $contentid);
         }
-        else {
-        	$this->Stories_model->updateComment($contentid,$commentid);
-			redirect('stories/open_stories/' . $contentid);
-        }
-	}
+    }
 
-	public function deleteComment($contentid,$commentid)
-	{
-		$this->Stories_model->deleteComment($contentid,$commentid);
-		redirect('stories/open_stories/' . $contentid);
-	}
+    public function deleteComment($contentid, $commentid) {
+        $this->Stories_model->deleteComment($contentid, $commentid);
+        redirect('stories/open_stories/' . $contentid);
+    }
 
 }

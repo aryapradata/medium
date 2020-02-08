@@ -80,16 +80,14 @@ class User extends CI_Controller {
         if (!$this->session->userdata('email')) {
             redirect('Auth');
         }
+        $data['user'] = $this->User_model->getUserByUsername($username);
+        $data['comment'] = $this->User_model->getCommentByUsername($username);
         $data['clap'] = $this->userGetClappedStories($username);
-        if ($data['user']['email'] == $this->session->userdata('email')) {
-            $data['user'] = $this->User_model->getUserByUsername($username);
-            $data['comment'] = $this->User_model->getCommentByUsername($username);
-            if ($data['user'] == $this->session->userdata('email')) {
-                $this->load->view('user/user_profile', $data);
-            } else {
-                $data['published'] = $this->User_model->getStoriesByUsernameStatus1($username);
-                $this->load->view('user/peek_profile', $data);
-            }
+        if ($username == $this->session->userdata('username')) {
+            redirect('user');
+        } else {
+            $data['published'] = $this->User_model->getStoriesByUsernameStatus1($username);
+            $this->load->view('user/peek_profile', $data);
         }
     }
 
