@@ -34,9 +34,11 @@
 							id="navbarSupportedContent">
 
 							<div class="navbarsearch">
-								<form action="<?= base_url(); ?>stories" method="post"  class="form-inline my-2 my-lg-0">
-										<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" >
-										<input type="submit" name="submit" value="Search" class="btn btn-outline-success my-2 my-sm-0">
+								<form action="<?= base_url(); ?>stories" method="post" class="form-inline my-2 my-lg-0">
+									<input class="form-control mr-sm-2" type="search" name="search"
+										placeholder="Search">
+									<input type="submit" name="submit" value="Search"
+										class="btn btn-outline-success my-2 my-sm-0">
 								</form>
 							</div>
 					</nav>
