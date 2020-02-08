@@ -49,7 +49,7 @@
 									<h5 class="card-title"><a
 											href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
 									</h5>
-									<p class="card-text"><?= $val['first_name']; ?> <?= $val['last_name']; ?></p>
+									<p class="card-text"><a href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
 									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>

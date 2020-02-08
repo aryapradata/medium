@@ -56,7 +56,7 @@
                 <button type="button" class="btn btn-info"><a href="<?= base_url("user/get_data/" . $val['user_id']); ?>">Edit Profile</a></button>
               <?php endforeach; ?>
               
-              <?php foreach ($comment as $val) : ?>
+    <?php foreach ($comment as $val) : ?>
         <table border="1">
             <tr>
                 <td>
