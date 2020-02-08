@@ -39,6 +39,7 @@
         </table>
     </form>
     <?php endforeach; ?>
+    <a href="<?= base_url(); ?>stories/index">Back</a>
 </body>
 
 </html>
