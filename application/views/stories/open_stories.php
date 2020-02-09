@@ -31,7 +31,7 @@
     				<div class="col-sm-2">
     					<p></p>
     				</div>
-    				<div class="col-7">>
+    				<div class="col-7">
     					<p>
     						<?= $val['content']; ?>
     					</p>
@@ -63,5 +63,13 @@
     	<?php endforeach; ?>
 
 
-    	<?php $this->load->view("_partials/footer_login.php"); ?>
+		<?php $this->load->view("_partials/footer_login.php"); ?>
+		
+		<form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Example textarea</label>
+				<textarea class="form-control" name="comment" rows="3"></textarea>
+			</div>
+			<button type="submit">Submit</button>
+		</form>  
 
