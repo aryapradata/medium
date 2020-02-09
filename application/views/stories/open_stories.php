@@ -105,7 +105,6 @@
         $(this).removeClass('active');
         clearInterval(timeOut);
         $(".counter").hide("slow");
-
         $.ajax({
             type: "POST",
             url: "<?php echo base_url(); ?>stories/autosave_celap/<?=  $val['content_id']; ?>",

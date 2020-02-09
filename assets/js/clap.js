@@ -23,7 +23,6 @@ $(document).ready(function () {
             url: "<?php echo base_url('Stories/autosave_celap'); ?>",
             data: {
                 clapCount: parseInt($('.counter').html(),
-                contentID: 
                 )
             },
             success: function (result) {
