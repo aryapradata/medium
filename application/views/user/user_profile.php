@@ -56,17 +56,6 @@
                 <button type="button" class="btn btn-info"><a href="<?= base_url("user/get_data/" . $val['user_id']); ?>">Edit Profile</a></button>
               <?php endforeach; ?>
               
-              <?php foreach ($comment as $val) : ?>
-        <table border="1">
-            <tr>
-                <td>
-                    <a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><?= $val['title']; ?></a>
-                    <p><?= $val['comment']; ?></p>
-                    <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
-                </td>
-            </tr>
-        </table>
-    <?php endforeach; ?>
                 <button type="button" class="btn btn-danger"><a href="<?= base_url('auth/logout'); ?>">LOGOUT</a></button>
                 <button type="button" class="btn btn-dark"><a href="<?= base_url(); ?>stories/index">BACK</a></button>
             </center>
@@ -94,11 +83,31 @@ what matters to you.</pre>
         </div>
     </div>
 
+    
   </div>
 </div>
 </div>
 
+<div class="alert alert-success" role="alert">
+<h2><b>Your comments will appear here!</b></h2>
+</div>
+<div class="container">
+<?php foreach ($comment as $val) : ?>
+    <hr>
+<div class="media mb-5">
+<img src="<?= base_url('assets/img/komen.jpg')?>" height="100px" width="100px"
+						class="align-self-start mr-3" alt="...">
+  <div class="media-body">
+    <h5 class="mt-0"> <b><a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><?= $val['title']; ?></a></b></h5>
+    <p><?= $val['comment']; ?></p>
+    <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>" class="btn btn-danger">Delete Comment</a>
+  </div>
+  <img src="<?= base_url('assets/img/komen.jpg')?>" height="100px" width="100px"
+						class="align-self-start mr-3" alt="...">
+</div>
 
+<?php endforeach; ?>
+</div>
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
 

@@ -1,9 +1,6 @@
 <?php $this->load->view("_partials/header_login.php"); ?>
 
- <form action="<?= base_url(); ?>stories" method="post">
-        <input type="search" name="search" placeholder="Search">
-        <input type="submit" name="submit" value="Search">
- </form>
+<div class="bghp">
 
 <div class="container mt-5">
 	<div class="row">
@@ -49,17 +46,19 @@
 							<div class="card ">
 								<h5 class="card-header"></h5>
 								<div class="card-body">
-									<h5 class="card-title"><a
-											href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
+									<h5 class="card-title">
+											<a href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
 									</h5>
-									<p class="card-text"><?= $val['first_name']; ?> <?= $val['last_name']; ?></p>
+									<p class="card-text"><a href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
 									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
 						</div>
+						
 						<?php endforeach; ?>
 					</div>
 				</div>
+				
 
 			<div class="homepagebox3">
 				<div class="col-2.5">
@@ -78,7 +77,4 @@ knowledge, and perspectives.</pre>
 
 
 	</div>
-
-
-
-
+</div>
