@@ -57,16 +57,17 @@
             <hr>
 			<ul class="list-unstyled">
 				<li class="media">
-                <img src="<?= base_url('assets/img/editprofile2.jpg')?>" height="100px" width="100px"
+                <img src="<?= base_url('assets/img/editprofile2.jpg')?>" height="80px" width="80px"
 						class="align-self-start mr-3" alt="...">
 					<div class="media-body">
+						<div class="peekprofile">
 						<h5 class="mt-0 mb-1">
 							<b><a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><?= $val['title']; ?></a></b>
 						</h5>
 						<div class="content-draft">
 							<p><?= $val['content']; ?></p>
 						</div>
-                        <p><?= $val['media']; ?></p>
+						</div>
                     </div>
                 </li>
             </ul>

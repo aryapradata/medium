@@ -538,3 +538,15 @@ h4 {
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
+.peekprofile a{
+	color: #660000;
+	font-weight: bolder;
+	font-size: 25px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	float: left;
+}
+
+.peekprofile p{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	float: left;
+}
