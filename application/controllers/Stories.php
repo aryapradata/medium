@@ -102,6 +102,14 @@ class Stories extends CI_Controller {
     public function open_stories($id) {
         $data['stories'] = $this->Stories_model->getStoriesById($id);
         $data['comment'] = $this->Stories_model->getCommentByContentId($id);
+        
+        if($this->Stories_model->getCountClapbyUser($id) == 0){
+            $data['clap'] = 0;
+        } else {
+            $data['clap'] = $this->Stories_model->getClapbyMyUsername($id);
+        }
+        
+
         $this->load->view('stories/open_stories', $data);
     }
 
@@ -174,10 +182,22 @@ class Stories extends CI_Controller {
         }
     }
 
-    public function autosave_celap() {
+    public function autosave_celap($id) {
         $data = array('clap' => $this->input->post('clapCount'));
-        $this->Stories_model->updateCelap($data);
+        
         echo $this->input->post('clapCount');
+
+
+        if($this->Stories_model->getCountClapbyUser($id) == 0){
+            $this->Stories_model->insertCelap($data, $id);
+           
+        } else {
+            $this->Stories_model->updateCelap($data, $id);
+        }
+    }
+
+    public function insertCelapCont($data, $id){
+        $this->Stories_model->insertCelap2($data, $id);
     }
 
     public function celap() {

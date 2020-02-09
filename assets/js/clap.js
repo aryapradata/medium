@@ -22,7 +22,9 @@ $(document).ready(function () {
             type: "POST",
             url: "<?php echo base_url('Stories/autosave_celap'); ?>",
             data: {
-                clapCount: parseInt($('.counter').html())
+                clapCount: parseInt($('.counter').html(),
+                contentID: 
+                )
             },
             success: function (result) {
                 console.log(result);

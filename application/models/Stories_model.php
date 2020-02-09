@@ -25,6 +25,18 @@ class Stories_model extends CI_Model {
         return $this->db->get('content')->result_array();
     }
 
+    public function getClapbyMyUsername($id){
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->where('content_id', $id);
+        return $this->db->get('clap')->result_array();
+    }
+
+    public function getCountClapbyUser($id){
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->where('content_id', $id);
+        return count($this->db->get('clap')->result_array());
+    }
+
     public function getStoriesByStatus($search = null) {
         if ($search) {
             $this->db->like('title', $search);
@@ -207,12 +219,26 @@ class Stories_model extends CI_Model {
         $this->db->update('comment', $data);
     }
 
-    public function insertCelap($data) {
-        return $this->db->insert('celap', $data);
+    public function insertCelap($data, $id) {
+        $dataArr = [
+            'username' => $this->session->userdata('username'),
+            'content_id' => $id,
+            'clap' => 0,
+        ];
+        return $this->db->insert('clap', $dataArr);
     }
 
-    public function updateCelap($data) {
-        return $this->db->update('celap', $data);
+    public function insertCelap2($data, $id){
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->where('content_id', $id);
+        return $this->db->insert('clap', $data);
+    
+    }
+
+    public function updateCelap($data, $id) {
+        $this->db->where('username', $this->session->userdata('username'));
+        $this->db->where('content_id', $id);
+        return $this->db->update('clap', $data);
     }
 
     public function getClap() {

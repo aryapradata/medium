@@ -523,7 +523,7 @@ h4 {
 	
 
 	
-	background-image: url('../img/clap.png');
+	
 	background-repeat: no-repeat;
 	background-size: 5%;
 	transform: scale3d(var(--scale-value), var(--scale-value), 1);
