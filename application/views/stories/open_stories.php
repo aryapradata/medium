@@ -56,9 +56,10 @@
     		<tr>
     			<td>
     				<b><?=$val['first_name'];?> <?=$val['last_name'];?></b>
-    				<p><?=$val['comment'];?></p>
-    				<a
-    					href="<?=base_url();?>stories/deleteComment/<?=$val['content_id'];?>/<?=$val['comment_id'];?>">Delete</a>
+					<p><?=$val['comment'];?></p>
+					<?php if ($val['username'] == $this->session->userdata('username')) : ?>
+						<a href="<?=base_url();?>stories/deleteComment/<?=$val['content_id'];?>/<?=$val['comment_id'];?>">Delete</a>
+					<?php endif; ?>
     			</td>
     		</tr>
     	</table>
