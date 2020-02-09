@@ -12,9 +12,6 @@
     			<div class="col-sm-4">
 
     			</div>
-
-
-
     		</div>
     	</div>
     	</div>
@@ -58,6 +55,7 @@
     				</div>
 				</div>
 				</div>
+
 				<div class="col-sm-3">
 					<img src="<?= base_url().'images/'.$val['media']?>" alt="" height="150" >
 					<hr>
