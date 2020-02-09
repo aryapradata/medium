@@ -6,7 +6,7 @@
 				<div class="container">
 					<?php foreach ($user as $val) : ?>
 					<div class="alert alert-warning" role="alert">
-						<h1 class="display-4"><b>Welcome, <?= $val['first_name']; ?></b></h1>
+						<h1 class="display-4"><b>Welcome to <?= $val['first_name']; ?>'s Profile!</b></h1>
 					</div>
 					<hr>
 					<div class="pp">
@@ -49,7 +49,7 @@
 			</div>
 
 			<div class="alert alert-primary" role="alert">
-				<h2>All of Your Stories Appear Here! </h2>
+				<h2>All of <b><?= $val['first_name']; ?>'s</b> Stories Appear Here! </h2>
             </div>
             <div class="container">
                 
