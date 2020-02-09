@@ -7,7 +7,7 @@
             
 			<div class="createstorybox">
 				<br>
-				<h7>UPDATE PAGE</h7>
+				<h7>UPDATE YOUR STORY HERE!</h7>
 				<br>
 				<pre>All on Medium, all for you.</pre>
 				<hr>

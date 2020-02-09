@@ -59,7 +59,7 @@
 				</div>
 				</div>
 				<div class="col-sm-3">
-					<img src="<?= base_url().'images/'.$val['media']?>" alt="" height="150" width="225">
+					<img src="<?= base_url().'images/'.$val['media']?>" alt="" height="150" >
 					<hr>
     			</div>
     		</div>

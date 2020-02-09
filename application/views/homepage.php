@@ -52,7 +52,7 @@
 					<div class="card-content">
 						<div class="card ">
 							<h5 class="card-header"><img src="<?= base_url().'images/'.$val['media']?>" alt=""
-									height="100" width="150"></h5>
+									height="150" ></h5>
 							<div class="card-body">
 								<div class="hp">
 									<h5 class="card-title">
