@@ -1,27 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Published</title>
-</head>
-<body>
-    <table border="2">
-        <thead>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Media</th>
-        </thead>
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <?php $this->load->view("_partials/header_isi1.php"); ?>
+    <?php $this->load->view("_partials/publish_header.php"); ?>
+    </head>
+
+    <body>
         <?php foreach ($published as $val) : ?>
-            <tr>
-                <td><?= $val['title']; ?></td>
-                <td><?= $val['content']; ?></td>
-                <td><?= $val['media']; ?></td>
-                <td><a href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>">Update</a></td>
-                <td><a href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a></td>
-        <?php endforeach; ?>
-        <a href="<?= base_url(); ?>stories/your_stories">Back</a>
-    </table>
-</body>
+    	<div class="d-flex flex-column bd-highlight mb-3">
+    		<div class="p-2 bd-highlight">
+    			<div class="container">
+    				<div class="title-content-draft">
+    					<div class="btn-group">
+    						<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+    							id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true"
+    							aria-expanded="false" data-reference="parent">
+    							<span class="sr-only">Toggle Dropdown</span>
+    						</button>
+    						<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+    							<a class="dropdown-item"
+    								href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>">Update</a>
+    							<a class="dropdown-item"
+    								href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
+    						</div>
+    					</div>
+    					<a class="text-decoration-none"
+    						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a>
+    				</div>
+    				<div class="content-draft">
+    					<a class="text-decoration-none"
+    						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
+    				</div>
+    				<hr>
+    			</div>
+    		</div>
+    	</div>
+    	<?php endforeach; ?>
+
+
+    	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    	</script>
+    	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    	</script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    	</script>
+
+    </body>
 </html>
+

@@ -25,12 +25,12 @@
 				<nav class="navbar navbar-expand-lg navbar-light">
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav">
-							<li class="nav-item active">
-								<a class="nav-link" href="<?= base_url(); ?>stories/drafts">Drafts<span
-									class="sr-only">(current)</span></a>
+							<li class="nav-item">
+								<a class="nav-link" href="<?= base_url(); ?>stories/drafts">Drafts</a>
 							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="<?= base_url(); ?>stories/published">Published</a>
+							<li class="nav-item active">
+								<a class="nav-link" href="<?= base_url(); ?>stories/published">Published<span
+									class="sr-only">(current)</span></a>
 							</li>
 						</ul>
 					</div>
