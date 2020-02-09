@@ -39,12 +39,6 @@
 											type="submit">Search</button>
 									</form>
 								</li>
-								<li class="nav-item active">
-									<a class="nav-link" href="<?php echo base_url('View/subscribe'); ?>">Subscribe</a>
-								</li>
-								<li class="nav-item active">
-									<a class="nav-link" href="<?php echo base_url('View/write'); ?>">Write</a>
-								</li>
 							</ul>
 						</div>
 					</nav>

@@ -31,57 +31,69 @@ class Stories extends CI_Controller {
 		$this->load->view('stories/create_stories');
 	}
 
-	public function create()
-	{
-		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
-		{
-			$this->Stories_model->createStoriesTitleNull();
-			redirect('stories/drafts');
+	public function createAction(){
+		if($this->input->post('submit')){
+			$upload = $this->Stories_model->insertImage();
+			if($upload['result'] == "success"){
+				$this->Stories_model->createStories($upload);
+				redirect('stories/drafts');
+			}else{
+			   echo "Failed ".$upload['error'];
+			}
 		}
-
-		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
-		{
-			$this->Stories_model->createStoriesContentNull();
-			redirect('stories/drafts');
-		}
-
-		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
-		{
-			$this->Stories_model->createStoriesMediaNull();
-			redirect('stories/drafts');
-		}
-		
-        else {
-			$this->Stories_model->createStories();
-			redirect('stories/drafts');
-        }
 	}
 
-	public function update($id)
-	{
-		if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
-		{
-			$this->Stories_model->updateStoriesTitleNull($id);
-			redirect('stories/drafts');
-		}
+	// public function create()
+	// {
+	// 	if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+	// 	{
+	// 		$this->Stories_model->createStoriesTitleNull();
+	// 		redirect('stories/drafts');
+	// 	}
 
-		if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
-		{
-			$this->Stories_model->updateStoriesContentNull($id);
-			redirect('stories/drafts');
-		}
-
-		if($this->form_validation->set_rules('media','Media','required')->run() == FALSE)
-		{
-			$this->Stories_model->updateStoriesMediaNull($id);
-			redirect('stories/drafts');
-		}
+	// 	if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+	// 	{
+	// 		$this->Stories_model->createStoriesContentNull();
+	// 		redirect('stories/drafts');
+	// 	}
 		
-        else {
-			$this->Stories_model->updateStories($id);
-			redirect('stories/drafts');
-        }
+    //     else {
+	// 		$this->Stories_model->createStories();
+	// 		redirect('stories/drafts');
+	// 	}
+	// }
+
+	public function updateAction($id){
+		if($this->input->post('submit')){
+			$upload = $this->Stories_model->updateImage();
+			if($upload['result'] == "success"){
+				$this->Stories_model->updateStories($id,$upload);
+				redirect('stories/open_stories/' . $id);
+			}else{
+			   echo "Failed ".$upload['error'];
+			}
+		}
 	}
+
+	// public function update($id)
+	// {
+	// 	if($this->form_validation->set_rules('title','Title','required')->run() == FALSE)
+	// 	{
+	// 		$this->Stories_model->updateStoriesTitleNull($id);
+	// 		redirect('stories/open_stories/' . $id);
+	// 	}
+
+	// 	if($this->form_validation->set_rules('content','Content','required')->run() == FALSE)
+	// 	{
+	// 		$this->Stories_model->updateStoriesContentNull($id);
+	// 		redirect('stories/open_stories/' . $id);
+	// 	}
+		
+    //     else {
+	// 		$this->Stories_model->updateStories($id);
+	// 		redirect('stories/open_stories/' . $id);
+    //     }
+	// }
 
 	public function drafts()
 	{

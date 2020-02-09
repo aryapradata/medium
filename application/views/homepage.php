@@ -1,7 +1,7 @@
 <?php $this->load->view("_partials/header_login.php"); ?>
 
-<div class="bghp">
 
+<<<<<<< HEAD
 	<div class="container mt-5">
 		<div class="row">
 			<div class="homepagebox">
@@ -55,10 +55,67 @@
 							<div class="card ">
 								<h5 class="card-header"></h5>
 								<div class="card-body">
+=======
+<div class="container mt-5">
+	<div class="row">
+		<div class="homepagebox">
+			<center>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						<div class="navbar-nav">
+							<div class="jarak">
+								<a class="btn btn-outline-primary" href="<?= base_url(); ?>stories/create_form">Create
+									Story<span class="sr-only">(current)</span></a>
+							</div>
+							<div class="jarak">
+								<div class="btn-group">
+									<button type="button" class="btn btn-outline-info dropdown-toggle"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										My Stories
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="<?= base_url(); ?>stories/drafts">Drafts</a>
+										<a class="dropdown-item"
+											href="<?= base_url(); ?>stories/published">Published</a>
+									</div>
+								</div>
+							</div>
+							<div class="jarak">
+								<a class="btn btn-outline-success" href="<?= base_url(); ?>user">See Profile <span
+										class="sr-only">(current)</span></a>
+							</div>
+							<div class="jarak">
+								<a class="btn btn-outline-danger" href="<?= base_url(); ?>auth/logout">Logout <span
+										class="sr-only">(current)</span></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</center>
+		</div>
+		<hr>
+
+		<div class="row">
+			<div class="col-9.5">
+				<div class="homepagebox2">
+					<?php foreach ($stories as $val) : ?>
+					<div class="card-content">
+						<div class="card ">
+							<h5 class="card-header"><img src="<?= base_url().'images/'.$val['media']?>" alt=""
+									height="150" ></h5>
+							<div class="card-body">
+								<div class="hp">
+>>>>>>> 74ba25b469f43cbf11f0f72028c873745a4e5184
 									<h5 class="card-title">
 										<a
 											href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
 									</h5>
+<<<<<<< HEAD
 									<p class="card-text"><a
 											href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?>
 											<?= $val['last_name']; ?></a></p>
@@ -68,8 +125,25 @@
 						</div>
 
 						<?php endforeach; ?>
+=======
+								</div>
+								<div class="hp2">
+								<p class="card-text"><a
+										href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?>
+										<?= $val['last_name']; ?></a></p>
+								</div>
+							</div>
+						</div>
+>>>>>>> 74ba25b469f43cbf11f0f72028c873745a4e5184
 					</div>
+
+					<?php endforeach; ?>
 				</div>
+<<<<<<< HEAD
+=======
+			</div>
+
+>>>>>>> 74ba25b469f43cbf11f0f72028c873745a4e5184
 
 
 				<div class="homepagebox3">
@@ -86,11 +160,15 @@ knowledge, and perspectives.</pre>
 				</div>
 			</div>
 		</div>
-
-
 	</div>
+
+
 </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 74ba25b469f43cbf11f0f72028c873745a4e5184
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 </script>

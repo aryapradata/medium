@@ -1,4 +1,3 @@
-
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
 
@@ -7,32 +6,61 @@
     </head>
 
     <body>
+
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-4">
+
+    			</div>
+
+
+
+    		</div>
+    	</div>
+    	</div>
+
     	<?php foreach ($stories as $val) : ?>
-    	<div class="d-flex flex-column bd-highlight mb-3">
-    		<div class="p-2 bd-highlight">
-    			<div class="container">
-    				<div class="title-content-draft">
-    					<div class="btn-group">
-    						<button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-    							id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true"
-    							aria-expanded="false" data-reference="parent">
-    							<span class="sr-only">Toggle Dropdown</span>
-    						</button>
-    						<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-    							<a class="dropdown-item"
-    								href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
-    							<a class="dropdown-item"
-    								href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
+
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-9">
+					<div class="container">
+    				<div class="d-flex flex-column bd-highlight mb-3">
+    					<div class="p-2 bd-highlight">
+    						<div class="container">
+    							<div class="title-content-draft">
+    								<div class="btn-group">
+    									<button type="button"
+    										class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+    										id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true"
+    										aria-expanded="false" data-reference="parent">
+    										<span class="sr-only">Toggle Dropdown</span>
+    									</button>
+    									<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+    										<a class="dropdown-item" <?php if ($val['title'] != null) : ?>
+    											href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
+    										<?php endif; ?>
+    										<a class="dropdown-item"
+    											href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
+    									</div>
+    								</div>
+    								<a class="text-decoration-none"
+    									href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a>
+    							</div>
+    							<div class="content-draft">
+    								<a class="text-decoration-none"
+    									href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
+    							</div>
+
+    							<hr>
     						</div>
     					</div>
-    					<a class="text-decoration-none"
-    						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['title']; ?></a>
     				</div>
-    				<div class="content-draft">
-    					<a class="text-decoration-none"
-    						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
-    				</div>
-    				<hr>
+				</div>
+				</div>
+				<div class="col-sm-3">
+					<img src="<?= base_url().'images/'.$val['media']?>" alt="" height="150" >
+					<hr>
     			</div>
     		</div>
     	</div>
@@ -50,5 +78,5 @@
     	</script>
 
     </body>
-</html>
 
+    </html>

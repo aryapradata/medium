@@ -1,4 +1,3 @@
-
 <?php $this->load->view("_partials/header_login.php"); ?>
 
 <div class="csbg">
@@ -12,7 +11,7 @@
 				<br>
 				<pre>All on Medium, all for you.</pre>
 				<hr>
-				<form action="<?= base_url(); ?>stories/create" method="post">
+				<?php echo form_open_multipart('stories/createAction');?>
 					<table border="0">
 						<tr>
 							<td><b>Title</b></td>
@@ -33,7 +32,7 @@
 						</tr>
 					</table>
 					<hr>
-					<button type="submit">Submit</button>
+					<input type="submit" name="submit" value="Submit">
 					<hr>
 				</form>
 			</div>
@@ -42,4 +41,3 @@
 </div>
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
-
