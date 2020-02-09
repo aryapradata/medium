@@ -1,6 +1,13 @@
 <?php
 
-class Stories_model extends CI_Model{
+
+class Stories_model extends CI_Model
+{
+    public function getAllStories()
+    {
+        return $this->db->get('content')->result_array();
+    }
+  
     public function getStoriesById($id)
     {
         $this->db->select('content.*, user.first_name, user.last_name');
@@ -33,19 +40,25 @@ class Stories_model extends CI_Model{
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
-        $this->db->where('status_stories',1);
+        $this->db->where('status_stories', 1);
         return $this->db->get()->result_array();
     }
 
     public function getCommentByContentId($id)
     {
-        $this->db->select('comment.*, user.first_name, user.last_name');
-        $this->db->from('user');
-        $this->db->join('comment', 'comment.username = user.username');
-        $this->db->where('content_id',$id);
-        return $this->db->get()->result_array();
+        $data = [
+            'username' => $this->session->userdata('username'),
+            'title' => $this->input->post('title'),
+            'content' => $this->input->post('content'),
+            'media' => $this->input->post('media'),
+            'status_stories' => 0,
+            'clap' => 0
+        ];
+
+        $this->db->insert('content', $data);
     }
 
+    
     public function insertImage(){
         $config['upload_path']='./images/';
         $config['allowed_types']='jpg|png|jpeg';
@@ -77,7 +90,20 @@ class Stories_model extends CI_Model{
             'status_stories' => 0
         ];
 
-        $this->db->insert('content',$data);
+        $this->db->insert('content', $data);
+    }
+
+    public function createStoriesMediaNull()
+    {
+        $data = [
+            'username' => $this->session->userdata('username'),
+            'title' => $this->input->post('title'),
+            'content' => $this->input->post('content'),
+            'media' => "No Media",
+            'status_stories' => 0,
+            'clap' => 0
+        ];
+        $this->db->insert('content', $data);
     }
 
     // public function createStoriesTitleNull()
@@ -135,8 +161,8 @@ class Stories_model extends CI_Model{
             'media'=> $upload['file']['file_name']
         ];
 
-        $this->db->where('content_id',$id);
-        $this->db->update('content',$data);
+        $this->db->where('content_id', $id);
+        $this->db->update('content', $data);
     }
 
     // public function updateStoriesTitleNull($id)
@@ -202,4 +228,21 @@ class Stories_model extends CI_Model{
         $this->db->where('comment_id',$commentid);
         $this->db->update('comment',$data);
     }
+
+
+    public function insertCelap($data){
+        return $this->db->insert('celap', $data);
+    }
+ 
+    public function updateCelap($data){
+        return $this->db->update('celap', $data); 
+    }
+
+    public function getClap()
+    {
+        return $this->db->get('celap')->result_array();
+    }
 }
+
+        
+
