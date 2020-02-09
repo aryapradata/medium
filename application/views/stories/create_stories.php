@@ -20,7 +20,7 @@
 						</tr>
 						<tr>
 							<td><b>Content</b></td>
-							<td width="50px">:</td>
+							<td width="49px">:</td>
 							<div class="form-group">
 								<td><textarea class="form-control" name="content" rows="12"></textarea> </td>
 							</div>
