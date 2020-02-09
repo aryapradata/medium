@@ -11,7 +11,7 @@
 				<br>
 				<pre>All on Medium, all for you.</pre>
 				<hr>
-				<form action="<?= base_url(); ?>stories/update/<?= $val['content_id']; ?>" method="post">
+				<?php echo form_open_multipart('stories/updateAction/' . $val['content_id'] );?>
                 <table border="0">
                     <tr>
                         <td><b>Title</b></td> 
@@ -26,11 +26,11 @@
                     <tr>
                         <td><b>Media</b></td>
                         <td>:</td>
-                        <td><input type="file" name="media" value="<?= $val['media']; ?>"></td>
+                        <td><input type="file" name="media" value="<?= base_url().'images/'.$val['media']?>"></td>
                     </tr>
                 </table>
 					<hr>
-                    <button type="submit" class="btn btn-success">Update</button>
+                    <input type="submit" name="submit" value="Update" class="btn btn-success">
 					<hr>
 				</form>
             </div>
@@ -40,4 +40,3 @@
 </div>
 
 <?php $this->load->view("_partials/footer_login.php"); ?>
-

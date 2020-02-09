@@ -1,4 +1,3 @@
-
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
 
@@ -19,8 +18,10 @@
     							<span class="sr-only">Toggle Dropdown</span>
     						</button>
     						<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-    							<a class="dropdown-item"
-    								href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
+                                <a class="dropdown-item"
+                                <?php if ($val['title'] != null) : ?>
+                                    href="<?= base_url(); ?>stories/publish/<?=$val['content_id']?>">Publish</a>
+                                <?php endif; ?>
     							<a class="dropdown-item"
     								href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
     						</div>
@@ -31,7 +32,8 @@
     				<div class="content-draft">
     					<a class="text-decoration-none"
     						href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>"><?= $val['content']; ?></a>
-    				</div>
+                    </div>
+                    <img src="<?= base_url().'images/'.$val['media']?>" alt="" height="300" width="450">
     				<hr>
     			</div>
     		</div>
@@ -51,4 +53,3 @@
 
     </body>
 </html>
-

@@ -24,7 +24,7 @@
     			</div>
     		</div>
 
-    		<a href=""><img src="<?= base_url('assets/img/content/c1.png')?>" width="1100" height="400"></a>
+    		<a href=""><img src="<?= base_url().'images/'.$val['media']?>" alt=""></a>
     		<br>
     		<div class="container content content-size">
     			<div class="row">
@@ -49,6 +49,7 @@
 
     	<?php endforeach; ?>
 
+
     	<?php foreach ($comment as $val) : ?>
     	<table border="1">
     		<tr>
@@ -64,4 +65,5 @@
 
 
     	<?php $this->load->view("_partials/footer_login.php"); ?>
+
 
