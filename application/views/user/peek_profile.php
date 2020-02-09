@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?= "Welcome " . $user['first_name'] . "!" ?></title>
+    <?php foreach ($user as $val) : ?>
+    <title><?= "Welcome " . $val['first_name'] . "!" ?></title>
 </head>
 
 <body>
@@ -13,39 +14,45 @@
         <tr>
             <td>Name</td>
             <td>:</td>
-            <td><?= $user['first_name'] . " " . $user["last_name"]; ?></td>
+            <td><?= $val['first_name'] . " " . $val["last_name"]; ?></td>
         </tr>
         <tr>
             <td>Username</td>
             <td>:</td>
-            <td><?= $user['username'] ?></td>
+            <td><?= $val['username'] ?></td>
         </tr>
         <tr>
             <td>Bio</td>
             <td>:</td>
-            <td><?= $user['bio'] ?></td>
+            <td><?= $val['bio'] ?></td>
         </tr>
         <tr>
             <td>Status</td>
             <td>:</td>
             <td><?php
-                if ($user['role_id'] == 1) {
+                if ($val['role_id'] == 1) {
                     echo "Administrator";
                 } else {
                     echo "User";
                 } ?></td>
         </tr>
     </table>
-    <table>
-    <?php foreach ($clap as $value) : ?>
-        <tr>
-            <td>title</td>
-            <td>:</td>
-            <td><a href="<?= base_url("stories/open_stories/").$value['content_id'] ?>"><?= $value['title'] ?></a></td>
-        </tr>
+
     <?php endforeach; ?>
-    </table>
-    
+<br><br>
+    <?php foreach ($published as $val) : ?>
+            <table border="1">
+                <tr>
+                    <td>
+                        <a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><?= $val['title']; ?></a>
+                        <p><?= $val['content']; ?></p>
+                        <p><?= $val['media']; ?></p>
+                    </td>
+                </tr>
+            </table>
+        <?php endforeach; ?>
+        <a href="<?= base_url(); ?>stories/index">Back</a>
+
 </body>
 
 </html>

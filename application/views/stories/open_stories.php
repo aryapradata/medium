@@ -1,24 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
 
-<body>
-    <?php foreach ($stories as $val) : ?>
-        <h3><?= $val['title']; ?></h3>
-        <p><?= $val['content']; ?></p>
-        <br>
-        <p><?= $val['first_name']; ?> <?= $val['last_name']; ?></p>
-        <br>
-        <p><?= "Claps : " . $val['clap']; ?></p>
-    <?php endforeach; ?>
-    <a href="<?= base_url(); ?>stories/index">Back</a>
-    <a href="<?= base_url('stories/clap/') . $val['content_id'] ?>">clap</a>
-</body>
+    <?php $this->load->view("_partials/header_isi1.php"); ?>
+    </head>
 
-</html>
+    <body>
+    	<?php foreach ($stories as $val) : ?>
+    	<div class="container content">
+    		<div class="row">
+    			<div class="col-sm-2">
+    			</div>
+    			<div class="col-7">
+    				<h1>
+    					<?= $val['title']; ?>
+    				</h1>
+    				<a href=""> <img src="<?= base_url('assets/img/comment/comment_1.png')?>" height="45px" width="45px"
+    						align="left"> </a>
+    				<p class="content-size">
+    					<?= $val['first_name']; ?> <?= $val['last_name']; ?>
+    				</p>
+    			</div>
+    			<div class="col">
+    			</div>
+    		</div>
+
+    		<a href=""><img src="<?= base_url().'images/'.$val['media']?>" alt=""></a>
+    		<br>
+    		<div class="container content content-size">
+    			<div class="row">
+    				<div class="col-sm-2">
+    					<p></p>
+    				</div>
+    				<div class="col-7">>
+						<p>
+							<?= $val['content']; ?>  
+						</p>						
+    				</div>
+    				<div class="col ">
+    					
+    				</div>
+              <p><a href="<?= base_url(); ?>user/get_user/<?= $val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
+            
+               <form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
+                  <input type="text" name="comment" placeholder="Comment...">
+                  <button type="submit">Submit</button>
+              </form>  
+            
+				</div>
+			</div>
+		</div>
+
+    	<?php endforeach; ?>
+      
+        <?php foreach ($comment as $val) : ?>
+              <table border="1">
+                  <tr>
+                      <td>
+                          <b><?= $val['first_name']; ?> <?= $val['last_name']; ?></b>
+                          <p><?= $val['comment']; ?></p>
+                          <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
+                      </td>
+                  </tr>
+              </table>
+            <?php endforeach; ?>
+
+
+    			<?php $this->load->view("_partials/footer_login.php"); ?>
+
