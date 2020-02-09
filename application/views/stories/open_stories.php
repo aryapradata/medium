@@ -37,10 +37,15 @@
     				<div class="col-sm-2">
     					<p></p>
     				</div>
-    				<div class="col-7">
-    					<p>
-    						<?= $val['content']; ?>
-    					</p>
+    				<div class="col-8">
+					<div class="open">
+    					<pre>
+							<?= $val['content']; ?>
+							<hr>
+						</pre>
+					</div>
+					
+						</div>
     				</div>
     				<div class="col ">
 
