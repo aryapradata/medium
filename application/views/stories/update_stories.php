@@ -9,7 +9,7 @@
 				<br>
 				<h7>UPDATE YOUR STORY HERE!</h7>
 				<br>
-				<pre>All on Medium, all for you.</pre>
+				<pre>All on Medium, all for you</pre>
 				<hr>
 				<?php echo form_open_multipart('stories/updateAction/' . $val['content_id'] );?>
                 <table border="0">

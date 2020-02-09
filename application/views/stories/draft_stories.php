@@ -14,7 +14,6 @@
     			</div>
     		</div>
     	</div>
-    	</div>
 
     	<?php foreach ($stories as $val) : ?>
 

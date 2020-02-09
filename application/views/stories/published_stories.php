@@ -21,7 +21,7 @@
     						</button>
     						<div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
     							<a class="dropdown-item"
-    								href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>">Update</a>
+    								href="<?= base_url(); ?>stories/update_form/<?=$val['content_id']?>">Update Story</a>
     							<a class="dropdown-item"
     								href="<?= base_url(); ?>stories/delete/<?=$val['content_id']?>">Delete</a>
     						</div>

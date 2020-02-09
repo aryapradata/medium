@@ -60,7 +60,7 @@
     			<div class="alert alert-warning" role="alert">
     				<form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
     					<div class="form-group">
-    						<label for="exampleInputEmail1">Type Your Comment Below..</label>
+    						<label for="exampleInputEmail1">Type Your Comment Below...</label>
     						<input type="text" name="comment" class="form-control" placeholder="Comment...">
     						<br>
     						<button type="submit" class="btn btn-primary">Submit</button>
