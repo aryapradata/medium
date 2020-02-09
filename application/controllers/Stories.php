@@ -119,16 +119,6 @@ class Stories extends CI_Controller {
         redirect('stories/open_stories/' . $id);
     }
 
-    // private function _uploadImage(){
-    //     $config['upload_path'] = './assets/images/';
-    //     $config['alloweed_types'] = 'jpg|png';
-    //     $config['file_name'] = ;
-    //     $config['overwrite'] = true;
-    //     $config['max_size'] = 1024;
-
-    //     $this->load->library('upload', $config);
-    // }
-
     function tambah_celap(){
         $data = array('clap'=>$this->input->post('clapCount'));
         

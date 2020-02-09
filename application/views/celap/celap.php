@@ -42,93 +42,9 @@
 </head>
 
 <body>
-
-	<!-- <div id="container">
-    <div id="celap">
-        <p id="counter">0</p>
-    </div>
-  </div> -->
-
-	<!-- <script>
-    // The item (or items) to press and hold on
-    var item = document.querySelector("#item");
- 
-    var timerID;
-    var counter = 0;
- 
-    var pressHoldEvent = new CustomEvent("pressHold");
- 
-    // Increase or decreae value to adjust how long
-    // one should keep pressing down before the pressHold
-    // event fires
-    var pressHoldDuration = 50;
- 
-    // Listening for the mouse and touch events    
-    item.addEventListener("mousedown", pressingDown, false);
-    item.addEventListener("mouseup", notPressingDown, false);
-    item.addEventListener("mouseleave", notPressingDown, false);
- 
-    item.addEventListener("touchstart", pressingDown, false);
-    item.addEventListener("touchend", notPressingDown, false);
- 
-    // Listening for our custom pressHold event
-    item.addEventListener("pressHold", doSomething, false);
- 
-    function pressingDown(e) {
-      // Start the timer
-      requestAnimationFrame(timer);
- 
-      e.preventDefault();
- 
-      console.log("Pressing!");
-    }
- 
-    function notPressingDown(e) {
-      // Stop the timer
-      cancelAnimationFrame(timerID);
-      counter = 0;
- 
-      item.style.setProperty("--scale-value", 1);
- 
-      console.log("Not pressing!");
-    }
- 
-    //
-    // Runs at 60fps when you are pressing down
-    //
-    function timer() {
-      console.log("Timer tick!");
- 
-      if (counter < pressHoldDuration) {
-        timerID = requestAnimationFrame(timer);
-        counter++;
- 
-        item.style.setProperty("--scale-value", 1 + counter / 50);
- 
-      } else {
-        console.log("Press threshold reached!");
-        item.dispatchEvent(pressHoldEvent);
-      }
-    }
- 
-    function doSomething(e) {
-      console.log("pressHold event fired!");
-    }
- 
-    var scale = 1 + counter / 50;
-    item.style.transform = "scale3d(" + scale + ", " + scale + ", 1)";
- 
-  </script> -->
-
 	<div id="container">
-
-
-
 		<div id="celap">
-
 			<p class="counter" hidden><?= $clap; ?></p>
-
-
 		</div>
 	</div>
 
@@ -166,22 +82,6 @@
 					}
 				});
 			});
-
-			// function autosave(){
-			// var t = setTimeout("autosave()", 1000);
-			// var clap = $("#clapCount").val(); 
-			//    $.ajax({
-			//       type: "POST",
-			//       url:"<?php echo base_url('Stories/autosave_celap'); ?>",
-			//       data: {clapCount: 10},
-			//       success: function(result){
-			//           console.log(result);
-			//       }
-			//    }); 
-			// } 
-
-
-
 		})
 
 	</script>
