@@ -78,10 +78,6 @@
 					 ?></p>
                 </div>
 				
-				<form action="<?=base_url();?>stories/createComment/<?=$val['content_id'];?>" method="post">
-                  <input type="text" name="comment" placeholder="Comment...">
-                  <button type="submit">Submit</button>
-              </form>
 
     			</div>
 
