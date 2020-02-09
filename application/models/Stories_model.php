@@ -9,7 +9,6 @@ class Stories_model extends CI_Model {
         $this->db->select('content.*, user.first_name, user.last_name');
         $this->db->from('user');
         $this->db->join('content', 'content.username = user.username');
-        $this->db->where('status_stories', 1);
         $this->db->where('content_id', $id);
         return $this->db->get()->result_array();
     }

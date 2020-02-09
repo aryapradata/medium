@@ -25,45 +25,6 @@ class Stories extends CI_Controller {
         $this->load->view('stories/create_stories');
     }
 
-    public function create() {
-        if ($this->form_validation->set_rules('title', 'Title', 'required')->run() == false) {
-            $this->Stories_model->createStoriesTitleNull();
-            redirect('stories/drafts');
-        }
-
-        if ($this->form_validation->set_rules('content', 'Content', 'required')->run() == false) {
-            $this->Stories_model->createStoriesContentNull();
-            redirect('stories/drafts');
-        }
-
-        if ($this->form_validation->set_rules('media', 'Media', 'required')->run() == false) {
-            $this->Stories_model->createStoriesMediaNull();
-            redirect('stories/drafts');
-        } else {
-            $this->Stories_model->createStories();
-            redirect('stories/drafts');
-        }
-    }
-
-    public function update($id) {
-        if ($this->form_validation->set_rules('title', 'Title', 'required')->run() == false) {
-            $this->Stories_model->updateStoriesTitleNull($id);
-            redirect('stories/drafts');
-        }
-
-        if ($this->form_validation->set_rules('content', 'Content', 'required')->run() == false) {
-            $this->Stories_model->updateStoriesContentNull($id);
-            redirect('stories/drafts');
-        }
-        if ($this->form_validation->set_rules('media', 'Media', 'required')->run() == false) {
-            $this->Stories_model->updateStoriesMediaNull($id);
-            redirect('stories/drafts');
-        } else {
-            $this->Stories_model->updateStories($id);
-            redirect('stories/drafts');
-        }
-    }
-
     public function createAction() {
         if ($this->input->post('submit')) {
             $upload = $this->Stories_model->insertImage();
