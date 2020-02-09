@@ -86,18 +86,6 @@
     		</div>
     	</div>
 
-<<<<<<< HEAD
-		<?php $this->load->view("_partials/footer_login.php"); ?>
-		
-		<form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
-			<div class="form-group">
-				<label for="exampleFormControlTextarea1">Example textarea</label>
-				<textarea class="form-control" name="comment" rows="3"></textarea>
-			</div>
-			<button type="submit">Submit</button>
-		</form>  
-=======
->>>>>>> 74ba25b469f43cbf11f0f72028c873745a4e5184
 
 
 
