@@ -12,4 +12,9 @@ class View extends CI_Controller {
         $this->load->view('write');
     }
 
+    public function subscribe ()
+    {
+        $this->load->view('subscribe');
+    }
+
 }
