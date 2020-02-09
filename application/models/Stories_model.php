@@ -87,7 +87,8 @@ class Stories_model extends CI_Model
             'title' => $this->input->post('title'),
             'content' => $this->input->post('content'),
             'media'=> $upload['file']['file_name'],
-            'status_stories' => 0
+            'status_stories' => 0,
+            'clap' => 0
         ];
 
         $this->db->insert('content', $data);
