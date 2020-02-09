@@ -1,9 +1,6 @@
 <?php $this->load->view("_partials/header_login.php"); ?>
 
- <form action="<?= base_url(); ?>stories" method="post">
-        <input type="search" name="search" placeholder="Search">
-        <input type="submit" name="submit" value="Search">
- </form>
+<div class="bghp">
 
 <div class="container mt-5">
 	<div class="row">
@@ -22,8 +19,15 @@
 								Story<span class="sr-only">(current)</span></a>
 							</div>
 							<div class="jarak">
-							<a class="btn btn-outline-info" href="<?= base_url(); ?>stories/your_stories">My Stories<span
-									class="sr-only">(current)</span></a>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        My Stories
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="<?= base_url(); ?>stories/drafts">Drafts</a>
+                                        <a class="dropdown-item" href="<?= base_url(); ?>stories/published">Published</a>
+                                    </div>
+                                </div>
 							</div>
 							<div class="jarak">
 							<a class="btn btn-outline-success" href="<?= base_url(); ?>user">See Profile <span
@@ -38,9 +42,8 @@
 				</nav>
 			</center>
 		</div>
-		<hr>
-
-		
+        <hr>
+        
 			<div class="row">
 				<div class="col-9.5">
 					<div class="homepagebox2">
@@ -49,17 +52,19 @@
 							<div class="card ">
 								<h5 class="card-header"></h5>
 								<div class="card-body">
-									<h5 class="card-title"><a
-											href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
+									<h5 class="card-title">
+											<a href="<?= base_url(); ?>stories/open_stories/<?=$val['content_id']; ?>"><?= $val['title']; ?></a>
 									</h5>
-									<p class="card-text"><?= $val['first_name']; ?> <?= $val['last_name']; ?></p>
+									<p class="card-text"><a href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
 									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
 						</div>
+						
 						<?php endforeach; ?>
 					</div>
 				</div>
+				
 
 			<div class="homepagebox3">
 				<div class="col-2.5">
@@ -78,7 +83,14 @@ knowledge, and perspectives.</pre>
 
 
 	</div>
+</div>
 
-
-
-
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    	</script>
+    	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    	</script>
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    	</script>

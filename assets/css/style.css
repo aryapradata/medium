@@ -231,11 +231,10 @@ h4 {
 }
 
 .bghp {
-	background-image: url("../img/bghp.png");
+	background-image: url("../img/color.jpg");
 	background-repeat: no-repeat;
-	background-position-x: right;
-	background-position-y: bottom;
-	background-size: 400px;
+	background-attachment: unset;
+	background-size: 1500px;
 
 }
 
@@ -245,7 +244,7 @@ h4 {
 }
 
 .navbarsearch {
-	margin-left: 500px;
+	margin-left: 400px;
 }
 
 .berita a {
@@ -502,5 +501,21 @@ h4 {
 	margin-bottom: 50px;
 	margin-top: 50px;
 
+}
+
+.peek a{
+	color: lightseagreen;
+	font-weight: 700;
+}
+
+.pp td{
+	font-size: larger;
+	font-weight: 600;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.peekp {
+	margin-right: 200px;
 }
 

@@ -33,38 +33,38 @@
     					<p></p>
     				</div>
     				<div class="col-7">>
-						<p>
-							<?= $val['content']; ?>  
-						</p>						
+    					<p>
+    						<?= $val['content']; ?>
+    					</p>
     				</div>
     				<div class="col ">
-    					
+
     				</div>
-              <p><a href="<?= base_url(); ?>user/get_user/<?= $val['username']; ?>"><?= $val['first_name']; ?> <?= $val['last_name']; ?></a></p>
-            
-               <form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
+				</div>
+				<form action="<?= base_url(); ?>stories/createComment/<?= $val['content_id']; ?>" method="post">
                   <input type="text" name="comment" placeholder="Comment...">
                   <button type="submit">Submit</button>
               </form>  
-            
-				</div>
-			</div>
-		</div>
+    		</div>
+    	</div>
 
     	<?php endforeach; ?>
-      
-        <?php foreach ($comment as $val) : ?>
-              <table border="1">
-                  <tr>
-                      <td>
-                          <b><?= $val['first_name']; ?> <?= $val['last_name']; ?></b>
-                          <p><?= $val['comment']; ?></p>
-                          <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
-                      </td>
-                  </tr>
-              </table>
-            <?php endforeach; ?>
 
 
-    			<?php $this->load->view("_partials/footer_login.php"); ?>
+    	<?php foreach ($comment as $val) : ?>
+    	<table border="1">
+    		<tr>
+    			<td>
+    				<b><?= $val['first_name']; ?> <?= $val['last_name']; ?></b>
+    				<p><?= $val['comment']; ?></p>
+    				<a
+    					href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>">Delete</a>
+    			</td>
+    		</tr>
+    	</table>
+    	<?php endforeach; ?>
+
+
+    	<?php $this->load->view("_partials/footer_login.php"); ?>
+
 
