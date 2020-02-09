@@ -1,6 +1,10 @@
 
     <link rel="stylesheet" href="<?=base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
     <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>    
+    <script src="<?=base_url('assets/js/clap.js')?>"></script>
 
     <?php $this->load->view("_partials/header_isi1.php");?>
     </head>
@@ -40,7 +44,10 @@
     				<div class="col ">
 
     				</div>
-				</div>
+                </div>
+                <div id="celap">
+                    <p class="counter" hidden><?= $clap; ?></p>
+                </div>
 				<form action="<?=base_url();?>stories/createComment/<?=$val['content_id'];?>" method="post">
                   <input type="text" name="comment" placeholder="Comment...">
                   <button type="submit">Submit</button>

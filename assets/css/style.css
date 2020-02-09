@@ -519,3 +519,23 @@ h4 {
 	margin-right: 200px;
 }
 
+#celap {
+	
+
+	
+	background-image: url('../img/clap.png');
+	background-repeat: no-repeat;
+	background-size: 5%;
+	transform: scale3d(var(--scale-value), var(--scale-value), 1);
+	transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) .2s;
+}
+
+#celap:active {
+	border-color: #003A75;
+	background-color: #F2F5EA;
+}
+
+#celap:hover {
+	cursor: pointer;
+}
+
