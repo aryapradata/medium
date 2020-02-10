@@ -76,24 +76,6 @@
     				</div>
 
                 </div>
-<<<<<<< HEAD
-=======
-
-				<div id="celap">
-					<img src="<?=base_url();?>assets/img/clap.png" alt="" style="width: 5%;">
-					<p class="counter"><?php 
-					 if($clap > 0){
-						 foreach($clap as $vall) :
-							echo $vall['clap'];
-						 endforeach;
-					 } else {
-						 echo $clap;
-					 }
-					 ?></p>
-                </div>
-				
-
->>>>>>> 18a56fef493401aa34b32686f82e7a9bae8fc95d
     			</div>
     		</div>
     	</div>
