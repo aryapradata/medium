@@ -1,0 +1,25 @@
+body{
+    font-family: "Times New Roman", Times, serif;
+}
+
+.content-1{
+    background-color:#e8f3ec;
+}
+
+.p-header p{
+    padding: 20px;
+}
+
+.cobox{
+    width: 650px;
+    height: 300px;
+    background-color:#e8f3ec;
+    position: relative;
+}
+.cobox h1{
+    
+    font-size: 30px;
+}
+.akhir{
+    background-color:#ededed;
+}
