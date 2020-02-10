@@ -9,6 +9,9 @@ class Auth extends CI_Controller
     }
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('stories');
+        }
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email', [
             'valid_email' => "Invalid email address!"
         ]);
@@ -36,11 +39,13 @@ class Auth extends CI_Controller
 
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'username' => $user['username'],
                         'email' => $user['email'],
-                        'role_id' => $user['role_id']
+                        'role_id' => $user['role_id'],
+                        'status' => 'login'
                     ];
                     $this->session->set_userdata($data);
-                    redirect('user');
+                    redirect('stories');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
   Password Invalid</div>');
@@ -61,6 +66,10 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+
+        if ($this->session->userdata('email')) {
+            redirect('stories');
+        }
         $this->form_validation->set_rules('first_name', 'First_Name', 'required|trim');
         $this->form_validation->set_rules('last_name', 'Last_Name', 'trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
@@ -81,6 +90,7 @@ class Auth extends CI_Controller
                 'email' => htmlspecialchars($this->input->post('email')),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'username' => htmlspecialchars($this->input->post('username')),
+                'bio' => "Hey there! I'm " . $this->input->post('first_name') . "! Welcome to my Medium",
                 'role_id' => 2,
                 'is_active' => 1,
                 'date_created' => time()

@@ -1,0 +1,583 @@
+body {
+	text-align: center;
+}
+
+h7 {
+	font-weight: bolder;
+	font-size: 100px;
+	font-family: fantasy;
+	font-style: italic;
+}
+
+h4 {
+	font-weight: bolder;
+	font-size: 30px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.mybox {
+
+	width: 100%;
+	height: 53px;
+	background: #FFCCCC;
+	padding: 10px;
+	margin: 0 auto;
+	border-radius: 50px;
+
+}
+
+.mybox p {
+
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-family: cursive;
+
+}
+
+.mypic {
+
+	border-radius: 100%;
+	width: 35px;
+	height: 35px;
+
+
+}
+
+.footerbox {
+
+	width: 100%;
+	height: 300px;
+	color: white;
+	background: black;
+	margin: 0 auto;
+
+
+}
+
+.footerbox p {
+
+	color: white;
+	font-size: 20px;
+	font-family: monospace;
+}
+
+.footerlogo {
+
+	float: left;
+	margin-top: 25px;
+	height: 80px;
+	width: 150px;
+
+}
+
+.logom {
+	float: left;
+	margin-top: 25px;
+	height: 65px;
+	width: 65px;
+}
+
+.link {
+	margin-top: 25px;
+}
+
+.footerright {
+	float: right;
+	margin-top: 50px;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer a:hover {
+	color: blueviolet;
+}
+
+.boxcentang {
+
+	width: 100%;
+	height: 150px;
+	color: grey;
+	background: white;
+	margin: 0 auto;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-style: italic;
+	margin-top: 40px;
+
+}
+
+.boxcentang2 {
+
+	width: 100%;
+	height: 150px;
+	color: black;
+	background: white;
+	margin: 0 auto;
+	font-family: initial;
+	margin-top: 40px;
+	margin-top: 25px;
+
+}
+
+.gambarlogo {
+
+	width: 500px;
+	height: 500px;
+}
+
+.tulisan {
+	font-size: 70px;
+	font-weight: bold;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.expand {
+
+	width: 100%;
+	height: 250px;
+	color: grey;
+	background: white;
+	margin: 0 auto;
+	font-family: medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-size: 20px;
+
+}
+
+.footerbox pre {
+	color: black;
+
+}
+
+.footerbox hr {
+	color: rgb(206, 194, 194);
+}
+
+.brand-header h3 {
+	font-family: medium-marketing-display-font, Georgia, Cambria, "Times New Roman", Times, serif !important;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 52px;
+	line-height: 1.2em;
+	margin-bottom: 20px;
+	padding-top: 60px !important;
+}
+
+.u-banner {
+	max-width: 1000px !important;
+	position: relative !important;
+	padding-bottom: 60px !important;
+	padding-top: 60px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	background: #E8F3EC;
+}
+
+.brand {
+	font-family: medium-marketing-content-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 20px;
+	color: rgba(0, 0, 0, .88);
+}
+
+.u-background {
+	max-width: 1150px !important;
+	padding-top: 40px !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
+	padding-bottom: 0 !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.avatar-image {
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 100%;
+	font-size: 12px;
+}
+
+.modallbg {
+	background-image: url("../img/kupu.png");
+	background-repeat: no-repeat;
+
+}
+
+.modallbg2 {
+	background-image: url("../img/kupu2.png");
+	background-repeat: no-repeat;
+	background-position-x: right;
+
+}
+
+.modallbg4 {
+	background-image: url("../img/abstrak.png");
+	background-size: 400px;
+	background-repeat: no-repeat;
+
+}
+
+.modallbg3 {
+	background-image: url("../img/abstrak2.png");
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: bottom;
+	background-size: 400px;
+
+}
+
+.bghp {
+	background-image: url("../img/color.jpg");
+	background-repeat: no-repeat;
+	background-attachment: unset;
+	background-size: 1500px;
+
+}
+
+
+.navbarlogin {
+	margin-top: 32px;
+}
+
+.navbarsearch {
+	margin-left: 400px;
+}
+
+.berita a {
+	color: black;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 15px;
+}
+
+.berita a:hover {
+	color: grey;
+}
+
+.boxlogin {
+
+	width: 600px;
+	height: 100%;
+	color: black;
+	background: white;
+	margin: 0 auto;
+	font-family: initial;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border-style: solid;
+	border-color: black;
+	box-shadow: 12px 12px 8px grey;
+
+}
+
+.boxlogin a {
+	color: #006666;
+}
+
+.boxlogin pre {
+	font-family: cursive;
+}
+
+.boxlogin hr {
+	background-color: grey;
+}
+
+.boxlogin h1 {
+	color: grey;
+	font-variant: small-caps;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bolder;
+}
+
+.boxlogin td {
+	font-family: monospace;
+	font-weight: 800;
+}
+
+.getstarted a {
+	color: #6633CC;
+	font-weight: 900;
+	font-size: 25PX;
+}
+
+.profile a {
+	color: black;
+}
+
+.fixed {
+	position: fixed;
+	background-color: blueviolet;
+}
+
+.title-draft {
+	float: left;
+	font-weight: bolder;
+	font-family: System, sans-serif;
+}
+
+.button-header-draft {
+	float: right;
+}
+
+.title-content-draft {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.title-content-draft a {
+	font-family: medium-content-sans-serif-font, "Lucida Grande",
+		"Lucida Sans Unicode", "Lucida Sans", Geneva,
+		Arial, sans-serif;
+	color: black;
+}
+
+.content-draft {
+	color: rgba(0, 0, 0, 0.54);
+	white-space: nowrap;
+	width: 1000px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.content-draft a {
+	color: rgba(0, 0, 0, 0.54);
+	font-family: medium-content-sans-serif-font, "Lucida Grande",
+		"Lucida Sans Unicode", "Lucida Sans", Geneva,
+		Arial, sans-serif;
+}
+
+
+.jumbotron2 {
+	box-shadow: 12px 12px 8px grey;
+	margin-top: 30px;
+}
+
+.jumbotron3 {
+	margin-top: 30px;
+}
+
+.jumbotron3 h5 {
+	font-size: 24px;
+}
+
+.footerboxlogin {
+
+	width: 100%;
+	height: 230px;
+	color: white;
+	background: grey;
+	margin: 0 auto;
+
+
+}
+
+.header-content {
+	color: rgba(0, 0, 0, 0.54);
+}
+
+.content {
+	font-family: medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.content-size {
+	font-size: 14;
+}
+
+.content-size p {
+	font-size: 19;
+}
+
+.content-quotes {
+	font-style: italic;
+}
+
+.content h4 {
+	color: rgba(0, 0, 0, 0.54);
+	font-weight: bold;
+	margin-top: 50px;
+
+}
+
+.homepagebox {
+	
+	margin-bottom: 30px;
+	margin-left: 140px;
+
+}
+
+.homepagebox2 {
+	
+	
+	margin-bottom: 50px;
+	margin-left: 50px;
+
+}
+
+.homepagebox3 {
+	position: fixed;
+	float: right;
+	margin-left: 950px;
+}
+
+.jarak{
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.card-content {
+	float: left;
+	width: 18rem;
+}
+
+.createstorybox {
+
+	width: 700px;
+	height: 100%;
+	color: black;
+	background: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-style: solid;
+	border-color: #009999;
+	box-shadow: 12px 12px 8px grey;
+
+}
+
+.createstorybox h7 {
+
+	font-size: 35px;
+	font-family: 'Times New Roman', Times, serif;
+	font-weight: 800;
+	color: grey;
+
+}
+
+.createstorybox pre {
+
+	font-size: 20px;
+	font-weight: 500;
+	color: black;
+
+}
+
+.csbg {
+	background-image: url("../img/createstory.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	max-width: 100%;
+	max-height: 100%;
+
+}
+
+.csbg2 {
+	background-image: url("../img/createstory.png");
+	background-repeat: no-repeat;
+	background-position: left;
+	max-width: 100%;
+	max-height: 100%;
+
+}
+
+.updatebox {
+
+	width: 700px;
+	height: 100%;
+	color: black;
+	background: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-style: solid;
+	border-color: rebeccapurple;
+	box-shadow: 12px 12px 8px grey;
+	margin: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+
+}
+
+.peek a{
+	color: lightseagreen;
+	font-weight: 700;
+}
+
+.pp td{
+	font-size: larger;
+	font-weight: 600;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.peekp {
+	margin-right: 200px;
+}
+
+
+#celap {
+	
+
+	
+	
+	background-repeat: no-repeat;
+	background-size: 5%;
+	transform: scale3d(var(--scale-value), var(--scale-value), 1);
+	transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) .2s;
+}
+
+#celap:active {
+	border-color: #003A75;
+	background-color: #F2F5EA;
+}
+
+#celap:hover {
+	cursor: pointer;
+}
+
+
+.hp a{
+	color: black;
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 25px;
+	
+}
+
+.hp2 a{
+	color: brown;
+	font-weight: bolder;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.ops a{
+	color: darkslateblue;
+	font-weight: bolder;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.peekprofile a{
+	color: #660000;
+	font-weight: bolder;
+	font-size: 25px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	float: left;
+}
+
+.peekprofile p{
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	float: left;
+}
+
+.open pre{
+	text-align: left;
+	white-space: pre-line;
+	font-size: 16px;
+	font-family: cursive;
+	
+}
+
