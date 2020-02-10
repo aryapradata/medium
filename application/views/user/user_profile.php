@@ -89,6 +89,24 @@ what matters to you.</pre>
 </div>
 </div>
 
+<div class="alert alert-success"><h2>Clap</h2>
+</div>
+
+<div class="container">
+        <?php foreach ($clap as $val) : ?> 
+        
+        <center>
+        <table>
+            <tr>
+                <td><a href="<?= base_url(); ?>stories/open_stories/<?= $val['content_id']; ?>"><p><?= $val['title']; ?> |</p></a> </td>
+                <td><p><?= $val['clap']; ?> Claps</p> </td>
+            </tr>
+        </table>
+        </center>
+
+        <?php endforeach; ?>                           
+</div>
+
 <div class="alert alert-success" role="alert">
 <h2><b>Your comments will appear here!</b></h2>
 </div>
