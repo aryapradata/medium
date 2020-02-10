@@ -91,8 +91,6 @@
 
     	<?php endforeach;?>
 
-
-
     	<div class="jumbotron jumbotron-fluid">
     		<div class="container">
     			<h3 class="display-4"><u><b><i>Comment</i></b></u></h3>
@@ -115,8 +113,9 @@
     								href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?><?= $val['last_name']; ?></a></b>
     					</div>
     					<p><?= $val['comment']; ?></p>
-    					<a
-    						href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+              <?php if ($val['username'] == $this->session->userdata('username')) : ?>
+    					  <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+              <?php endif; ?>
     					<br>
     					<hr>
     					<?php endforeach; ?>
@@ -148,9 +147,6 @@
         $(this).removeClass('active');
         clearInterval(timeOut);
         $(".counter").hide("slow");
-
-
-
         $.ajax({
             type: "POST",
             url: "<?php echo base_url(); ?>stories/autosave_celap/<?=  $val['content_id']; ?>",
