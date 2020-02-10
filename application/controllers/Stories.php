@@ -188,17 +188,15 @@ class Stories extends CI_Controller {
         echo $this->input->post('clapCount');
 
 
-        if($this->Stories_model->getCountClapbyUser($id) == 0){
-            $this->Stories_model->insertCelap($data, $id);
-           
-        } else {
+        if($this->Stories_model->getCountClapbyUser($id) != 0){   
             $this->Stories_model->updateCelap($data, $id);
+            $this->Stories_model->updateCelapContent($data, $id);
+        } else {
+            $this->Stories_model->insertCelap($data, $id);
         }
     }
 
-    public function insertCelapCont($data, $id){
-        $this->Stories_model->insertCelap2($data, $id);
-    }
+   
 
     public function celap() {
         $data['clap'] = $this->Stories_model->getClap()[0]['clap'];

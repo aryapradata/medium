@@ -76,13 +76,29 @@
     				</div>
 
                 </div>
+<<<<<<< HEAD
+=======
+
+				<div id="celap">
+					<img src="<?=base_url();?>assets/img/clap.png" alt="" style="width: 5%;">
+					<p class="counter"><?php 
+					 if($clap > 0){
+						 foreach($clap as $vall) :
+							echo $vall['clap'];
+						 endforeach;
+					 } else {
+						 echo $clap;
+					 }
+					 ?></p>
+                </div>
+				
+
+>>>>>>> 18a56fef493401aa34b32686f82e7a9bae8fc95d
     			</div>
     		</div>
     	</div>
 
     	<?php endforeach;?>
-
-
 
     	<div class="jumbotron jumbotron-fluid">
     		<div class="container">
@@ -106,8 +122,9 @@
     								href="<?= base_url(); ?>user/get_user/<?=$val['username']; ?>"><?= $val['first_name']; ?><?= $val['last_name']; ?></a></b>
     					</div>
     					<p><?= $val['comment']; ?></p>
-    					<a
-    						href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+              <?php if ($val['username'] == $this->session->userdata('username')) : ?>
+    					  <a href="<?= base_url(); ?>stories/deleteComment/<?= $val['content_id']; ?>/<?= $val['comment_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+              <?php endif; ?>
     					<br>
     					<hr>
     					<?php endforeach; ?>
@@ -139,9 +156,6 @@
         $(this).removeClass('active');
         clearInterval(timeOut);
         $(".counter").hide("slow");
-
-
-
         $.ajax({
             type: "POST",
             url: "<?php echo base_url(); ?>stories/autosave_celap/<?=  $val['content_id']; ?>",
