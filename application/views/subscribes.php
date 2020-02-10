@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,34 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="sstyle.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>css/sstyle.css"/>
-    <title>Medium</title>
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap/bootstrap.min.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>" />
+    
+    <?php $this->load->view("_partials/header.php"); ?>
+    
   </head>
   <body>
-
-  <!-- Navbar --->
-  <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Medium</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Our Story <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><b>About Membership</b></a>
-      </li>
-      <li class="nav-item">
-      <button type="button" class="btn btn-outline-dark">Upgrade</button>
-      </li>
-    </ul>
-  </div>
-</nav>
-  </div>
-  <!-- Navbar --->
 
   <!--- Banner Part --->
 <div class="container">
@@ -282,7 +259,7 @@
 </div>
 <!--- Footer--->
 
-
+<?php $this->load->view("_partials/footer.php"); ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

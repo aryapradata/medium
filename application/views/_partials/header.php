@@ -31,7 +31,7 @@
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="<?php echo base_url('View/subscribe'); ?>">Subscribe</a>
+                                        <a class="nav-link" href="<?php echo base_url('View/subscribes'); ?>">Subscribe</a>
                                     </li>
                                     <li class="nav-item active">
                                     <a class="nav-link" href="<?php echo base_url('View/write'); ?>">Write</a>
