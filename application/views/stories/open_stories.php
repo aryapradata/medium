@@ -43,6 +43,18 @@
 
     		<br>
     		<div class="container content content-size">
+				<div id="celap">
+					<img src="<?=base_url();?>assets/img/clap.png" alt="" style="width: 5%;">
+					<p class="counter"><?php 
+					 if($clap > 0){
+						 foreach($clap as $vall) :
+							echo $vall['clap'];
+						 endforeach;
+					 } else {
+						 echo $clap;
+					 }
+					 ?></p>
+                </div>
     			<div class="row">
     				<div class="col-sm-2">
     					<p></p>
@@ -64,28 +76,7 @@
     				</div>
 
                 </div>
-
-				<div id="celap">
-					<img src="<?=base_url();?>assets/img/clap.png" alt="" style="width: 5%;">
-					<p class="counter"><?php 
-					 if($clap > 0){
-						 foreach($clap as $vall) :
-							echo $vall['clap'];
-						 endforeach;
-					 } else {
-						 echo $clap;
-					 }
-					 ?></p>
-                </div>
-				
-				<form action="<?=base_url();?>stories/createComment/<?=$val['content_id'];?>" method="post">
-                  <input type="text" name="comment" placeholder="Comment...">
-                  <button type="submit">Submit</button>
-              </form>
-
     			</div>
-
-
     		</div>
     	</div>
 
