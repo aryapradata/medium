@@ -228,12 +228,7 @@ class Stories_model extends CI_Model {
         return $this->db->insert('clap', $dataArr);
     }
 
-    public function insertCelap2($data, $id){
-        $this->db->where('username', $this->session->userdata('username'));
-        $this->db->where('content_id', $id);
-        return $this->db->insert('clap', $data);
-    
-    }
+   
 
     public function updateCelap($data, $id) {
         $this->db->where('username', $this->session->userdata('username'));
