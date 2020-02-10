@@ -190,6 +190,7 @@ class Stories extends CI_Controller {
 
         if($this->Stories_model->getCountClapbyUser($id) != 0){   
             $this->Stories_model->updateCelap($data, $id);
+            $this->Stories_model->updateCelapContent($data, $id);
         } else {
             $this->Stories_model->insertCelap($data, $id);
         }
